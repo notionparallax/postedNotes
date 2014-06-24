@@ -116,14 +116,16 @@ $(document).ready(function() {
         console.log($("#addressBox").val());
         console.log($("#addressBox").val().length);
 
-        //var messageChunks = $("#messageBox").val().match(/.{1,200}/g); //from: http://stackoverflow.com/questions/7033639/javascript-split-large-string-in-n-size-chunks
-        var messageChunks1 = $("#messageBox").val().slice(  0,200);
-        var messageChunks2 = $("#messageBox").val().slice(200,400);
-        var messageChunks3 = $("#messageBox").val().slice(400,600);
-        var messageChunks4 = $("#messageBox").val().slice(600,800);
+        var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm,"~|");
+        var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm,"~|");
 
-        var addressChunks1 = $("#addressBox").val().slice(  0,200);
-        var addressChunks2 = $("#addressBox").val().slice(200,400);
+        var messageChunks1 = tidyMessage.slice(  0,200);
+        var messageChunks2 = tidyMessage.slice(200,400);
+        var messageChunks3 = tidyMessage.slice(400,600);
+        var messageChunks4 = tidyMessage.slice(600,800);
+
+        var addressChunks1 = tidyAddress.slice(  0,200);
+        var addressChunks2 = tidyAddress.slice(200,400);
         console.log([messageChunks1, messageChunks2,
                      messageChunks3, messageChunks4,
                      addressChunks1, addressChunks2]);
