@@ -75,25 +75,30 @@ Australia
 
                 <!--allocated to message - 800 chars-->
                 <input type="hidden" name="on0" value="value1">
-                <input type="text"   name="os0" maxlength="200">
+                <input type="text"   name="os0" id="m1" maxlength="200">
 
                 <input type="hidden" name="on1" value="value2">
-                <input type="text"   name="os1" maxlength="200">
+                <input type="text"   name="os1" id="m2" maxlength="200">
 
                 <input type="hidden" name="on3" value="value3">
-                <input type="text"   name="os3" maxlength="200">
+                <input type="text"   name="os3" id="m3" maxlength="200">
 
                 <input type="hidden" name="on4" value="value4">
-                <input type="text"   name="os4" maxlength="200">
+                <input type="text"   name="os4" id="m4" maxlength="200">
 
                 <!--allocated to address 400 chars-->
                 <input type="hidden" name="on5" value="value5">
-                <input type="text"   name="os5" maxlength="200">
+                <input type="text"   name="os5" id="a1" maxlength="200">
 
                 <input type="hidden" name="on6" value="value6">
-                <input type="text"   name="os6" maxlength="200">
+                <input type="text"   name="os6" id="a2" maxlength="200">
             </div>
-            <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+            <input type="image"
+                   src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynow_SM.gif" 
+                   border="0" 
+                   name="submit" 
+                   alt="PayPal — The safer, easier way to pay online."
+                   id="realButton">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
         </form>
         <a class="btn btn-default btn-lg" id="testButton">test button</a>
@@ -101,16 +106,35 @@ Australia
 <script>
 $(document).ready(function() {
 
-    $("#testButton").click(function() {
+    var processInputs = function() {
         console.log($("#messageBox").val());
         console.log($("#messageBox").val().length);
         console.log($("#addressBox").val());
         console.log($("#addressBox").val().length);
 
-        var messageChunks = $("#messageBox").val().match(/.{1,200}/g); <!--from: http://stackoverflow.com/questions/7033639/javascript-split-large-string-in-n-size-chunks-->
-        console.log(messageChunks);
+        //var messageChunks = $("#messageBox").val().match(/.{1,200}/g); //from: http://stackoverflow.com/questions/7033639/javascript-split-large-string-in-n-size-chunks
+        var messageChunks1 = $("#messageBox").val().slice(  0,200);
+        var messageChunks2 = $("#messageBox").val().slice(200,400);
+        var messageChunks3 = $("#messageBox").val().slice(400,600);
+        var messageChunks4 = $("#messageBox").val().slice(600,800);
 
-    });
+        var addressChunks1 = $("#addressBox").val().slice(  0,200);
+        var addressChunks2 = $("#addressBox").val().slice(200,400);
+        console.log([messageChunks1, messageChunks2,
+                     messageChunks3, messageChunks4,
+                     addressChunks1, addressChunks2]);
+
+        $("#m1").val(messageChunks1);
+        $("#m2").val(messageChunks2);
+        $("#m3").val(messageChunks3);
+        $("#m4").val(messageChunks4);
+        $("#a1").val(addressChunks1);
+        $("#a2").val(addressChunks2);
+
+    };
+
+    $("#testButton").click(processInputs);
+    $("#realButton").click(processInputs);
 
 
     var bootstrapSize = function() {
