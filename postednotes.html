@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Mum
+    </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js">
+    </script>
+    <link type="text/css" rel="stylesheet" href="note.css">
+</head>
+
+<body>
+    <div class="container">
+        <!--this p will explain what layout is active-->
+        <p class='page-info'>
+        </p>
+        <!--this row should show off what the bootstrap grid looks like-->
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">1</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">2</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">3</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">4</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">5</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">6</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">7</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">8</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">9</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">10</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">11</div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">12</div>
+        </div>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <div class="row">
+                <div class="col-xs-12
+  				            col-sm-12
+  				            col-md-6
+  				            col-lg-6 
+  				            card">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="DHV9XBYKF2A8J">
+                    <!--<input type="hidden" name="item_name" value="Hand Written Note">
+						      <input type="hidden" name="amount" value="5.00">-->
+                    <input type="hidden" name="on1" value="Note" maxlength="200">
+                    <label for="os1">
+                        Your note
+                    </label>
+                    <textarea rows="6" cols="60" name="os1">
+                    </textarea>
+                </div>
+                <div class="col-xs-12
+  				            col-sm-12
+  				            col-md-6
+  				            col-lg-6 
+  				            envelope">
+                    <input type="text" name="line1" placholder="Name">
+                    <input type="text" name="line2" placholder="Street Address">
+                    <input type="text" name="line3" placholder="State/County">
+                    <input type="text" name="line4" placholder="Postcode">
+                </div>
+                <input type="image" src="http://www.paypal.com/en_GB/i/btn/x-click-but01.gif" border="0" name="submit" alt="PayPal">
+        </form>
+        </div>
+</body>
+<script>
+/*this just writes to the top of the doc the width of the window, and the bootstrap
+			  layout that is currently active.
+			  more details here: http://getbootstrap.com/css/#grid
+			*/
+$(document).ready(function() {
+    var bootstrapSize = function() {
+        var bsLayout;
+        var width = window.innerWidth;
+        if (width < 768) {
+            bsLayout = "width: " + width + " - Extra small devices (Phones) - Using xs";
+        } else if(width >= 768 && width < 992) {
+            bsLayout = "width: " + width + " - Small devices (Tablets) - Using sm";
+        } else if(width >= 992 && width < 1200) {
+            bsLayout = "width: " + width + " - Medium devices (Desktops) - Using md";
+        } else if(width >= 1200) {
+            bsLayout = "width: " + width + " - Large devices (Desktops) - Using lg";
+        } else {
+            bsLayout = "width: " + width + " - Something is very wrong!!";
+        }
+        return bsLayout;
+    }
+    $(".page-info").html(bootstrapSize());
+    window.onresize = function(event) {
+        $(".page-info").html(bootstrapSize());
+    };
+});
+</script>
+
+</html>

@@ -1,0 +1,17 @@
+@charset"utf-8";
+ body {
+    background: rgb(136, 128, 108);
+}
+.card,.envelope{border:1px solid black;} 
+.card {
+    /*-webkit-transform:rotate(-2deg);
+    -moz-transform:rotate(-2deg);
+    transform:rotate(-2deg);*/
+}
+.envelope {
+    /*-webkit-transform:rotate(2deg);
+    -moz-transform:rotate(2deg);
+    transform:rotate(2deg);*/
+}
+
+textarea{border:none;}
