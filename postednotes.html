@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Mum
+        Posted Notes
     </title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
     </script>
@@ -36,54 +36,97 @@
             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 columnSizeDemo">12</div>
         </div>
 
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <div class="row">
-                <div class="col-xs-12
-  				            col-sm-12
-  				            col-md-6
-  				            col-lg-6 
-  				            card">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="DHV9XBYKF2A8J">
-                    <!--<input type="hidden" name="item_name" value="Hand Written Note">
-						      <input type="hidden" name="amount" value="5.00">-->
-                    <input type="hidden" name="on1" value="Note" maxlength="200">
-                    <label for="os1">
-                        Your note
-                    </label>
-                    <textarea rows="6" cols="60" name="os1">
-                    </textarea>
-                </div>
-                <div class="col-xs-12
-  				            col-sm-12
-  				            col-md-6
-  				            col-lg-6 
-  				            envelope">
-                    <input type="text" name="line1" placholder="Name">
-                    <input type="text" name="line2" placholder="Street Address">
-                    <input type="text" name="line3" placholder="State/County">
-                    <input type="text" name="line4" placholder="Postcode">
-                </div>
-                <input type="image" src="http://www.paypal.com/en_GB/i/btn/x-click-but01.gif" border="0" name="submit" alt="PayPal">
-        </form>
+        <div class="row">
+            <div class="col-xs-12
+                        col-sm-12
+                        col-md-6
+                        col-lg-6
+                        card">
+                <label for="message">Message:</label>
+                <textarea rows="10" cols="60" name="message" id="messageBox">
+Dearest monkey,
+This is some sample text that goes in this box. I really need to work out how much writing is reasonable to do. In total I have 1200 chars at my disposal, so I really ought to thank you for being such a nice monkey and keeping me safe and happy as I go hunting for acorns and truffles. 
+
+lots of love
+
+Piglet
+                </textarea>
+            </div>
+            <div class="col-xs-12
+                        col-sm-12
+                        col-md-6
+                        col-lg-6
+                        envelope">
+                <label for="address">Address:</label>
+                <textarea rows="10" cols="60" name="address" id="addressBox">
+Irina Belova
+3 Meeks Road
+Marrickville
+2204
+Australia
+                </textarea>
+            </div>
         </div>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <div class="invisible-bit">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="BAMLF4YGYUAJ6">
+
+                <!--allocated to message - 800 chars-->
+                <input type="hidden" name="on0" value="value1">
+                <input type="text"   name="os0" maxlength="200">
+
+                <input type="hidden" name="on1" value="value2">
+                <input type="text"   name="os1" maxlength="200">
+
+                <input type="hidden" name="on3" value="value3">
+                <input type="text"   name="os3" maxlength="200">
+
+                <input type="hidden" name="on4" value="value4">
+                <input type="text"   name="os4" maxlength="200">
+
+                <!--allocated to address 400 chars-->
+                <input type="hidden" name="on5" value="value5">
+                <input type="text"   name="os5" maxlength="200">
+
+                <input type="hidden" name="on6" value="value6">
+                <input type="text"   name="os6" maxlength="200">
+            </div>
+            <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynow_SM.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+        </form>
+        <a class="btn btn-default btn-lg" id="testButton">test button</a>
 </body>
 <script>
-/*this just writes to the top of the doc the width of the window, and the bootstrap
-			  layout that is currently active.
-			  more details here: http://getbootstrap.com/css/#grid
-			*/
 $(document).ready(function() {
+
+    $("#testButton").click(function() {
+        console.log($("#messageBox").val());
+        console.log($("#messageBox").val().length);
+        console.log($("#addressBox").val());
+        console.log($("#addressBox").val().length);
+
+        var messageChunks = $("#messageBox").val().match(/.{1,200}/g); <!--from: http://stackoverflow.com/questions/7033639/javascript-split-large-string-in-n-size-chunks-->
+        console.log(messageChunks);
+
+    });
+
+
     var bootstrapSize = function() {
+        /*this just writes to the top of the doc the width of the
+          window, and the bootstrap layout that is currently active.
+          more details here: http://getbootstrap.com/css/#grid
+        */
         var bsLayout;
         var width = window.innerWidth;
         if (width < 768) {
             bsLayout = "width: " + width + " - Extra small devices (Phones) - Using xs";
-        } else if(width >= 768 && width < 992) {
+        } else if (width >= 768 && width < 992) {
             bsLayout = "width: " + width + " - Small devices (Tablets) - Using sm";
-        } else if(width >= 992 && width < 1200) {
+        } else if (width >= 992 && width < 1200) {
             bsLayout = "width: " + width + " - Medium devices (Desktops) - Using md";
-        } else if(width >= 1200) {
+        } else if (width >= 1200) {
             bsLayout = "width: " + width + " - Large devices (Desktops) - Using lg";
         } else {
             bsLayout = "width: " + width + " - Something is very wrong!!";
