@@ -81,7 +81,7 @@
                         </div>
                     </div>
                     <div class="col-xs-10 col-sm-12">
-                        <p class="caption text-left">You type a letter to someone, 600 characters of anything you like.</p>
+                        <p class="caption text-left">You type a letter to someone, 900 characters of anything you like.</p>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
             <!--geography stuff-->
             <h2>Where&hellip;</h2>
             <div class="col-xs-12 col-sm-7 col-sm-offset-1">
-                <img class="map" src="http://i.stack.imgur.com/bYvO3.jpg">
+                    <object type="image/svg+xml" data="Blank_Map_Pacific_World.svg" >world map</object>
             </div>
             <div class="col-xs-12 col-sm-4 where-text">
                 <p>At the moment we post letters to Australia and the UK, we'll be
@@ -133,7 +133,10 @@
             <a name="note"></a> <!--writing stuff-->
                 <h2>Your note&hellip;</h2>
                 <!--letter comes from here: http://www.lettersofnote.com/2010/11/its-true-beauty-however-was-that-it.html-->
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return processInputs();">
+                <form action="https://www.paypal.com/cgi-bin/webscr" 
+                      method="post" 
+                      target="_top" 
+                      onsubmit="return processInputs();">
 
                     <div class="row">
                         <div class="card
@@ -191,29 +194,29 @@ NSW"></textarea>
                         <input type="hidden" name="hosted_button_id" value="BAMLF4YGYUAJ6">
 
                         <!--allocated to message - 800 chars-->
-                        <input type="hidden" name="on0" value="value1">
+                        <input type="hidden" name="on0" value="message_part_1">
                         <input type="text" name="os0" id="m1" maxlength="200">
 
-                        <input type="hidden" name="on1" value="value2">
+                        <input type="hidden" name="on1" value="message_part_2">
                         <input type="text" name="os1" id="m2" maxlength="200">
 
-                        <input type="hidden" name="on3" value="value3">
+                        <input type="hidden" name="on3" value="message_part_3">
                         <input type="text" name="os3" id="m3" maxlength="200">
 
-                        <input type="hidden" name="on4" value="value4">
+                        <input type="hidden" name="on4" value="message_part_4">
                         <input type="text" name="os4" id="m4" maxlength="200">
 
                         <!--allocated to address 400 chars-->
-                        <input type="hidden" name="on5" value="value5">
+                        <input type="hidden" name="on5" value="address_part_1">
                         <input type="text" name="os5" id="a1" maxlength="200">
 
-                        <input type="hidden" name="on6" value="value6">
+                        <input type="hidden" name="on6" value="address_part_2">
                         <input type="text" name="os6" id="a2" maxlength="200">
                     </div>
 
                     <div class="button-bar">
                         <button type="button" 
-                                class="btn btn-primary btn-lg col-md-3 col-md-offset-3" 
+                                class="btn btn-primary btn-lg col-xs-12 col-md-3 col-md-offset-3" 
                                 src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynow_SM.gif" 
                                 border="0" 
                                 name="submit" 
