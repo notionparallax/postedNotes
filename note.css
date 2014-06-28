@@ -16,7 +16,7 @@ p{
     position: relative;
 }
 .card {
-    height:38em;
+    height:50em;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 4em;
@@ -63,6 +63,11 @@ textarea {
     width: 100%;
     height: 100%
 }
+.envelope textarea{
+    width: 80%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 .invisible-bit {
     display: none;
 }
@@ -70,7 +75,7 @@ textarea {
     height: 5em;
 }
 .header-page {
-    background-image: url('http://placekitten.com/500/300');
+    background-image: url('http://placekitten.com/500/200');
     background-position: center center;
     background-repeat: no-repeat;
     /*background-attachment: fixed; */
