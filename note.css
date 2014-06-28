@@ -1,9 +1,19 @@
 @charset"utf-8";
  body {
-    background: rgb(136, 128, 108);
+    background: rgba(62,71,157,0.05);
 }
+html,body {height:100%;}
+.jumbotron {
+    height:95%;
+    position: relative;
+}
+
+/*.container{
+    max-width: none;
+}
+*/
 .card, .envelope {
-    border:1px solid black;
+    background-color: white;
 }
 .card {
     /*-webkit-transform:rotate(-2deg);
@@ -17,6 +27,7 @@
 }
 textarea {
     border:none;
+    width: 100%;
 }
 .invisible-bit{
 	display: none;
@@ -25,3 +36,113 @@ textarea {
 .page-info{
 	height: 5em;
 }
+
+.header-page{
+    background-image: url('http://placekitten.com/g/500/300') ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+.down-arrow {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+
+.numbered-illustration{
+    position: relative;
+    margin-bottom: 1em;
+}
+.illustration{
+    width:100%;
+}
+.number{
+    border: 2px solid black;
+    position: absolute;
+    left:10%;
+    top: 10%;
+    width:2em;
+    height: 2em;
+    border-radius: 1em;
+    background-color: white;
+}
+
+.how-row{
+    padding-bottom: 4em;
+}
+
+.where-row{
+    background-color: rgba(62,71,157,1);
+    padding-bottom: 4em;
+    margin-left: -1000px;
+    padding-left: 1000px;
+    margin-right: -1000px;
+    padding-right: 1000px;
+}
+
+.map{
+    width: 100%
+}
+
+.airmail-stripe{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    height:2em;
+    border-radius: 1em;
+    background-color: rgba(62,71,157,1);
+    background: repeating-linear-gradient( 
+        117deg, 
+        rgba(62,71,157,1) 0px, 
+        rgba(62,71,157,1) 30px,
+
+        transparent 30px, 
+        transparent 60px,
+
+        rgba(222,30,38,1) 60px,
+        rgba(222,30,38,1) 90px,
+        
+        transparent 90px,
+        transparent 120px );
+}
+
+.logo-bird{
+    height:5em;
+}
+
+ul.nav-menu{
+    float: right;
+}
+ul.nav-menu li {
+    display: inline-block;
+    padding-left: 3em;
+}
+
+.shadow {
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
+}
+
+.btn-ghost{
+    background-color: none;
+}
+
+.paypal-logo{
+    /*Paypal logo comes from:
+    http://htmlpreview.github.io/?https://gist.githubusercontent.com/jomo/141e186af45fa1f803af/raw/c7dcd85978f443c2cfb42305bb568dea6c87f6ed/paypal.svg*/
+    height:2em;
+    width: 2em;
+    -webkit-transform: translateY(0.9em); 
+       -moz-transform: translateY(0.9em);   
+}
+.send-btn-text{
+
+}
+
+/*div{border: 1px dashed silver;}*/
