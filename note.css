@@ -10,26 +10,53 @@ html, body {
     height:95%;
     position: relative;
 }
-/*.container{
-    max-width: none;
-}
-*/
- .card, .envelope {
-    background-color: white;
-}
 .card {
-    /*-webkit-transform:rotate(-2deg);
-    -moz-transform:rotate(-2deg);
-    transform:rotate(-2deg);*/
+    height:38em;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 4em;
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    z-index: 7000;
 }
 .envelope {
-    /*-webkit-transform:rotate(2deg);
-    -moz-transform:rotate(2deg);
-    transform:rotate(2deg);*/
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 4em;
+    padding-top: 4em;
+    height: 30em;
+    /*background-image:url('envelope.png');*/
+    background-position: top right;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed; */
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+    padding-bottom: 12em;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.stamp {
+    background-color: rgba(222, 30, 38, 1);
+    width: 8em;
+    height: 5em;
+    padding: 0.5em;
+    margin-bottom: 4em;
+}
+.stamp svg {
+    height:4em;
+    margin-left: 1.5em;
+}
+.stamp svg #pigeon {
+    fill:white;
 }
 textarea {
     border:none;
     width: 100%;
+    height: 100%
 }
 .invisible-bit {
     display: none;
@@ -38,7 +65,7 @@ textarea {
     height: 5em;
 }
 .header-page {
-    background-image: url('http://placekitten.com/g/500/300');
+    background-image: url('http://placekitten.com/500/300');
     background-position: center center;
     background-repeat: no-repeat;
     /*background-attachment: fixed; */
@@ -71,6 +98,12 @@ textarea {
     background-color: rgba(222, 30, 38, 1);
     font-size: 2em;
     color: white;
+}
+.what-row {
+    padding-bottom: 4em;
+}
+.what-row-text {
+    -webkit-column-count:3;
 }
 .how-row {
     padding-bottom: 4em;
@@ -106,12 +139,9 @@ ul.nav-menu li {
     padding-left: 3em;
 }
 .shadow {
-    -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
-    -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
 }
 .btn-ghost {
-    background-color: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 .paypal-logo {
     /*Paypal logo comes from:
@@ -122,5 +152,10 @@ ul.nav-menu li {
     -moz-transform: translateY(0.9em);
 }
 .send-btn-text {
+}
+.button-bar {
+    margin-top: 4em;
+    width: 100%;
+    background-color: red;
 }
 /*div{border: 1px dashed silver;}*/
