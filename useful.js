@@ -33,6 +33,38 @@ var processInputs = function() {
     return true;
 };
 
+var submit_email = function(){
+        var    myAddress = "ben+postednotes@notionparallax.co.uk";
+        var theirAddress = $("#email").val();
+        var    theirName = $("#name").val();
+        console.log(["email button",   myAddress, theirAddress, theirName ]);
+
+        $.ajax({
+          type: "POST",
+          url: "https://mandrillapp.com/api/1.0/messages/send.json",
+          data: {
+            'key': '92W7qrQShJKr0-pTYL10jQ',
+            'message': {
+              'from_email': 'ben@notionparallax.co.uk',
+              'to': [
+                  {
+                    'email': myAddress,
+                    'name': 'RECIPIENT NAME (OPTIONAL)',
+                    'type': 'to'
+                  }
+                ],
+              'autotext': 'true',
+              'subject': theirName + 'Just signed up for postednotes',
+              'html': theirAddress
+            }
+          }
+         }).done(function(response) {
+           console.log(response); // if you're into that sorta thing
+         });
+        $(".message").html("Thanks! We'll be in touch.")
+        return false;
+    };
+
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -48,9 +80,12 @@ $(function() {
   });
 });
 
+
+
 $(document).ready(function() {
     fixBorder();
     $("#realButton").click(processInputs);
+
 });
 
 $( window ).resize( function(){
@@ -63,11 +98,28 @@ $('#messageBox').keyup(function () {
     if (count<500){
         $("#char-count"        ).html("<span class='text-success'>"+count+"</span>");
         $("#char-count-message").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
-    }else if(count<600){
+    }else if(count<=800){
         $("#char-count"        ).html("<span class='text-warning'>"+count+"</span>");
         $("#char-count-message").html("<span class='text-warning'>Time to start winding it up</span>");
     }else if(count>800){
         $("#char-count"        ).html("<span class='text-danger'>"+count+"</span>");
         $("#char-count-message").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
+    }else{
+        console.log(["the bogey man commeth",count]);
+    }
+
+});
+
+$('#addressBox').keyup(function () {
+    var count= $('#addressBox').val().length;
+    if (count<250){
+        $("#char-count-a"        ).html("<span class='text-success'>"+count+"</span>");
+        $("#char-count-message-a").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
+    }else if(count<=400){
+        $("#char-count-a"        ).html("<span class='text-warning'>"+count+"</span>");
+        $("#char-count-message-a").html("<span class='text-warning'>Time to start winding it up</span>");
+    }else if(count>400){
+        $("#char-count-a"        ).html("<span class='text-danger'>"+count+"</span>");
+        $("#char-count-message-a").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
     }
 });
