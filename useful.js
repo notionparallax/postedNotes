@@ -38,9 +38,9 @@ var processInputs = function() {
     $("#m2").val(messageChunks2);
     $("#m3").val(messageChunks3);
     $("#m4").val(messageChunks4);
+
     $("#a1").val(addressChunks1);
     $("#a2").val(addressChunks2);
-
 };
 
 $(document).ready(function() {
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 });
 
-window.onresize = function() {
-    console.log("fucking resized");
-        fixBorder();
-    };
+$( window ).resize( function(){
+    fixBorder();
+    console.log("resize");
+});
