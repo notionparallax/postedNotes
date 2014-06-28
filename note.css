@@ -1,18 +1,20 @@
 @charset"utf-8";
  body {
-    background: rgba(62,71,157,0.05);
+    background: rgba(62, 71, 157, 0.05);
+    overflow-x: hidden !important;
 }
-html,body {height:100%;}
+html, body {
+    height:100%;
+}
 .jumbotron {
     height:95%;
     position: relative;
 }
-
 /*.container{
     max-width: none;
 }
 */
-.card, .envelope {
+ .card, .envelope {
     background-color: white;
 }
 .card {
@@ -29,16 +31,14 @@ textarea {
     border:none;
     width: 100%;
 }
-.invisible-bit{
-	display: none;
+.invisible-bit {
+    display: none;
 }
-
-.page-info{
-	height: 5em;
+.page-info {
+    height: 5em;
 }
-
-.header-page{
-    background-image: url('http://placekitten.com/g/500/300') ;
+.header-page {
+    background-image: url('http://placekitten.com/g/500/300');
     background-position: center center;
     background-repeat: no-repeat;
     /*background-attachment: fixed; */
@@ -46,103 +46,81 @@ textarea {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
 }
-
 .down-arrow {
     position: absolute;
     top: 90%;
     width: 100%;
 }
-
-.numbered-illustration{
+.numbered-illustration {
     position: relative;
     margin-bottom: 1em;
 }
-.illustration{
+.illustration {
     width:100%;
 }
-.number{
-    border: 2px solid black;
+.number {
     position: absolute;
-    left:10%;
-    top: 10%;
-    width:2em;
+    left: 7%;
+    top: 7%;
+    width: 2em;
     height: 2em;
     border-radius: 1em;
-    background-color: white;
+    border-width: 0.2em;
+    border-color: rgba(62, 71, 157, 0.05);
+    background-color: rgba(222, 30, 38, 1);
+    font-size: 2em;
+    color: white;
 }
-
-.how-row{
+.how-row {
     padding-bottom: 4em;
 }
-
-.where-row{
-    background-color: rgba(62,71,157,1);
+.where-row {
+    color:white;
+    background-color: rgba(62, 71, 157, 1);
     padding-bottom: 4em;
     margin-left: -1000px;
     padding-left: 1000px;
     margin-right: -1000px;
     padding-right: 1000px;
 }
-
-.map{
+.map {
     width: 100%
 }
-
-.airmail-stripe{
+.airmail-stripe {
     margin-top: 3em;
     margin-bottom: 3em;
     height:2em;
     border-radius: 1em;
-    background-color: rgba(62,71,157,1);
-    background: repeating-linear-gradient( 
-        117deg, 
-        rgba(62,71,157,1) 0px, 
-        rgba(62,71,157,1) 30px,
-
-        transparent 30px, 
-        transparent 60px,
-
-        rgba(222,30,38,1) 60px,
-        rgba(222,30,38,1) 90px,
-        
-        transparent 90px,
-        transparent 120px );
+    background-color: rgba(62, 71, 157, 1);
+    background: repeating-linear-gradient(117deg, rgba(62, 71, 157, 1) 0px, rgba(62, 71, 157, 1) 30px, transparent 30px, transparent 60px, rgba(222, 30, 38, 1) 60px, rgba(222, 30, 38, 1) 90px, transparent 90px, transparent 120px);
 }
-
-.logo-bird{
+.logo-bird {
     height:5em;
 }
-
-ul.nav-menu{
+ul.nav-menu {
     float: right;
 }
 ul.nav-menu li {
     display: inline-block;
     padding-left: 3em;
 }
-
 .shadow {
-    -webkit-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
-    -moz-box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
-    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.54);
+    -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.54);
 }
-
-.btn-ghost{
+.btn-ghost {
     background-color: none;
 }
-
-.paypal-logo{
+.paypal-logo {
     /*Paypal logo comes from:
     http://htmlpreview.github.io/?https://gist.githubusercontent.com/jomo/141e186af45fa1f803af/raw/c7dcd85978f443c2cfb42305bb568dea6c87f6ed/paypal.svg*/
     height:2em;
     width: 2em;
-    -webkit-transform: translateY(0.9em); 
-       -moz-transform: translateY(0.9em);   
+    -webkit-transform: translateY(0.9em);
+    -moz-transform: translateY(0.9em);
 }
-.send-btn-text{
-
+.send-btn-text {
 }
-
 /*div{border: 1px dashed silver;}*/
