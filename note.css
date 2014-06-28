@@ -6,6 +6,11 @@
 html, body {
     height:100%;
 }
+p{
+    font-size: 133.3333333%;
+    orphans: 2;
+    widows: 2;
+}
 .jumbotron {
     height:95%;
     position: relative;
@@ -16,8 +21,8 @@ html, body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 4em;
     -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     z-index: 7000;
 }
 .envelope {
@@ -36,8 +41,8 @@ html, body {
     background-size: cover;*/
     padding-bottom: 12em;
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+       -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
 }
 .stamp {
     background-color: rgba(222, 30, 38, 1);
@@ -112,10 +117,9 @@ textarea {
     color:white;
     background-color: rgba(62, 71, 157, 1);
     padding-bottom: 4em;
-    margin-left: -1000px;
-    padding-left: 1000px;
-    margin-right: -1000px;
-    padding-right: 1000px;
+}
+.where-text{
+    padding-top: 4em;
 }
 .map {
     width: 100%
@@ -126,7 +130,20 @@ textarea {
     height:2em;
     border-radius: 1em;
     background-color: rgba(62, 71, 157, 1);
-    background: repeating-linear-gradient(117deg, rgba(62, 71, 157, 1) 0px, rgba(62, 71, 157, 1) 30px, transparent 30px, transparent 60px, rgba(222, 30, 38, 1) 60px, rgba(222, 30, 38, 1) 90px, transparent 90px, transparent 120px);
+    background: repeating-linear-gradient(
+        117deg,
+        rgba(62, 71, 157, 1) 0px,
+        rgba(62, 71, 157, 1) 30px,
+
+        transparent 30px,
+        transparent 60px,
+
+        rgba(222, 30, 38, 1) 60px,
+        rgba(222, 30, 38, 1) 90px,
+
+        transparent 90px,
+        transparent 120px
+        );
 }
 .logo-bird {
     height:5em;
@@ -142,6 +159,12 @@ ul.nav-menu li {
 }
 .btn-ghost {
     background-color: rgba(0, 0, 0, 0);
+    padding-bottom: 1em;
+}
+
+#realButton {
+    padding-bottom: 1em;
+    padding-top: 0px;
 }
 .paypal-logo {
     /*Paypal logo comes from:
