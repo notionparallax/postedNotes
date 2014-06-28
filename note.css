@@ -91,10 +91,10 @@ textarea {
     left: 7%;
     top: 7%;
     width: 2em;
-    height: 2em;
+    padding: 0.3em;
     border-radius: 1em;
     border-width: 0.2em;
-    border-color: rgba(62, 71, 157, 0.05);
+    border-color: white;
     background-color: rgba(222, 30, 38, 1);
     font-size: 2em;
     color: white;
