@@ -82,7 +82,7 @@ textarea {
 .down-arrow {
     position: absolute;
     top: 90%;
-    width: 100%;
+    width: 90%;
 }
 .numbered-illustration {
     position: relative;
@@ -146,7 +146,8 @@ textarea {
         );
 }
 .logo-bird {
-    height:5em;
+    height:8em;
+    margin-left: 10em;
 }
 ul.nav-menu {
     float: right;
@@ -180,4 +181,5 @@ ul.nav-menu li {
     margin-top: 4em;
     width: 100%;
 }
+
 /*div{border: 1px dashed silver;}*/
