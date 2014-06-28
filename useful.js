@@ -56,3 +56,17 @@ $( window ).resize( function(){
     fixBorder();
     console.log("resize");
 });
+
+$('#messageBox').keyup(function () {
+    var count= $('#messageBox').val().length;
+    if (count<600){
+        $("#char-count"        ).html("<span class='text-success'>"+count+"</span>");
+        $("#char-count-message").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
+    }else if(count<700){
+        $("#char-count"        ).html("<span class='text-warning'>"+count+"</span>");
+        $("#char-count-message").html("<span class='text-warning'>Time to start winding it up</span>");
+    }else if(count>900){
+        $("#char-count"        ).html("<span class='text-danger'>"+count+"</span>");
+        $("#char-count-message").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
+    }
+});
