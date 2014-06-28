@@ -49,12 +49,8 @@ $(function() {
 });
 
 $(document).ready(function() {
-
     fixBorder();
-
-    $("#testButton").click(processInputs);
     $("#realButton").click(processInputs);
-
 });
 
 $( window ).resize( function(){
