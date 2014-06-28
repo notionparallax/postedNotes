@@ -132,6 +132,7 @@
         <div class="row">
             <a name="note"></a> <!--writing stuff-->
                 <h2>Your note&hellip;</h2>
+                <!--letter comes from here: http://www.lettersofnote.com/2010/11/its-true-beauty-however-was-that-it.html-->
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return processInputs();">
 
                     <div class="row">
@@ -139,9 +140,31 @@
                                 col-sm-12
                                 col-md-5
                                 col-md-offset-1">
-                            <label for="message">Message:</label>
+                            <label for="message">Message:</label> <span id="char-count">0</span>/900 <span id="char-count-message"></span>
                             <br>
-                            <textarea rows="20" cols="60" name="message" id="messageBox"></textarea>
+                            <textarea rows="20" cols="60" name="message" id="messageBox" placeholder="NEIL A. ARMSTRONG
+P.O. BOX 436
+LEBANON, OH 45036
+
+July 14, 1994
+
+The EMU gang at
+Johnson Space Center
+Houston, TX 77058
+
+To the EMU gang:
+
+I remember noting a quarter century or so ago that an emu was a 6 foot Australian flightless bird. I thought that got most of it right.
+
+It turned out to be one of the most widely photographed spacecraft in history. That was no doubt due to the fact that it was so photogenic. Equally responsible for its success was its characteristic of hiding from view its ugly occupant.
+
+Its true beauty, however, was that it worked. It was tough, reliable and almost cuddly.
+
+To all of you who made it all that it was, I send a quarter century's worth of thanks and congratulations.
+
+Sincerely,
+
+Neil A. Armstrong"></textarea>
                         </div>
 
                         <div class="envelope
@@ -155,7 +178,11 @@
                                 </svg>
                             </div>
                             <label for="address">Address:</label>
-                            <textarea rows="10" cols="60" name="address" id="addressBox"></textarea>
+                            <textarea rows="10" cols="60" name="address" id="addressBox" placeholder="Ben Doherty
+3 Meeks Rd
+Marrickville
+2204
+NSW"></textarea>
                         </div>
                     </div>
 
