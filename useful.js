@@ -6,7 +6,7 @@ $(function() {
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
-        }, 1000);
+        }, 300);
         return false;
       }
     }
@@ -16,25 +16,26 @@ $(function() {
 $(document).ready(function() {
 
     var processInputs = function() {
-        console.log($("#messageBox").val());
-        console.log($("#messageBox").val().length);
-        console.log($("#addressBox").val());
-        console.log($("#addressBox").val().length);
+        // console.log($("#messageBox").val());
+        // console.log($("#messageBox").val().length);
+        // console.log($("#addressBox").val());
+        // console.log($("#addressBox").val().length);
 
         var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
         var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
 
-        var messageChunks1 = tidyMessage.slice(0, 200);
+        var messageChunks1 = tidyMessage.slice(0  , 200);
         var messageChunks2 = tidyMessage.slice(200, 400);
         var messageChunks3 = tidyMessage.slice(400, 600);
         var messageChunks4 = tidyMessage.slice(600, 800);
 
-        var addressChunks1 = tidyAddress.slice(0, 200);
+        var addressChunks1 = tidyAddress.slice(0  , 200);
         var addressChunks2 = tidyAddress.slice(200, 400);
-        console.log([messageChunks1, messageChunks2,
-            messageChunks3, messageChunks4,
-            addressChunks1, addressChunks2
-        ]);
+
+        // console.log([messageChunks1, messageChunks2,
+        //     messageChunks3, messageChunks4,
+        //     addressChunks1, addressChunks2
+        // ]);
 
         $("#m1").val(messageChunks1);
         $("#m2").val(messageChunks2);
