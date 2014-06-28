@@ -1,18 +1,3 @@
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 300);
-        return false;
-      }
-    }
-  });
-});
-
 var fixBorder = function() {
     var pushBy = ($("body").width() - $(".where-row").width() )/2;
     $(".where-row").css("margin-left"  , -pushBy);
@@ -21,7 +6,10 @@ var fixBorder = function() {
     $(".where-row").css("padding-right", pushBy  );
     console.log([pushBy, pushBy * -1]);
 };
+
 var processInputs = function() {
+
+    console.log("processing these inputs");
 
     var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
     var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
@@ -41,7 +29,24 @@ var processInputs = function() {
 
     $("#a1").val(addressChunks1);
     $("#a2").val(addressChunks2);
+
+    return true;
 };
+
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 300);
+        return false;
+      }
+    }
+  });
+});
 
 $(document).ready(function() {
 
