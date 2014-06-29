@@ -17,6 +17,23 @@ p {
     height:95%;
     position: relative;
 }
+.header-page {
+    color: rgba(222, 30, 38, 1);
+    background-image: url('http://therapyfirst.files.wordpress.com/2013/06/writing-a-letter.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.logo-bird {
+    height:8em;
+}
+svg #pigeon {
+    fill:rgba(222, 30, 38, 1);
+}
 .card {
     height:50em;
     background-color: white;
@@ -75,16 +92,6 @@ textarea {
 }
 .page-info {
     height: 5em;
-}
-.header-page {
-    background-image: url('http://placekitten.com/500/200');
-    background-position: center center;
-    background-repeat: no-repeat;
-    /*background-attachment: fixed; */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 .down-arrow {
     position: absolute;
@@ -150,9 +157,6 @@ textarea {
     padding: 0.5;
     margin-bottom: 1em;
 }
-.logo-bird {
-    height:8em;
-}
 ul.nav-menu {
     float: right;
 }
@@ -191,6 +195,9 @@ ul.nav-menu li {
     background-position: 50% 60%;
     background-size: 138%;
     border-radius: 5em;
+}
+.ball-icon{
+    width: 100%;
 }
 
 /*media query targeting xs*/
