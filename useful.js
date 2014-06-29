@@ -83,11 +83,13 @@ $(function() {
   });
 });
 
-
-
 $(document).ready(function() {
     fixBorder();
     $("#realButton").click(processInputs);
+
+    $(".pro-tips").click(function(){
+        $(".pro-tips").toggleClass("pro-tips-active");
+    });
 
 });
 
