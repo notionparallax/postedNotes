@@ -67,7 +67,7 @@ var submit_email = function() {
                         'type': 'to'
                     }],
                     'autotext': 'true',
-                    'subject': theirName + 'Just signed up for postednotes',
+                    'subject': theirName + ' Just signed up for postednotes',
                     'html': theirAddress
                 }
             }
