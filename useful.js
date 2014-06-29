@@ -38,30 +38,33 @@ var submit_email = function(){
         var theirAddress = $("#email").val();
         var    theirName = $("#name").val();
         console.log(["email button",   myAddress, theirAddress, theirName ]);
-
-        $.ajax({
-          type: "POST",
-          url: "https://mandrillapp.com/api/1.0/messages/send.json",
-          data: {
-            'key': '92W7qrQShJKr0-pTYL10jQ',
-            'message': {
-              'from_email': 'ben@notionparallax.co.uk',
-              'to': [
-                  {
-                    'email': myAddress,
-                    'name': 'RECIPIENT NAME (OPTIONAL)',
-                    'type': 'to'
-                  }
-                ],
-              'autotext': 'true',
-              'subject': theirName + 'Just signed up for postednotes',
-              'html': theirAddress
-            }
-          }
-         }).done(function(response) {
-           console.log(response); // if you're into that sorta thing
-         });
-        $(".message").html("Thanks! We'll be in touch.")
+        if(theirAddress.length>3 && theirName.length>1){
+            $.ajax({
+              type: "POST",
+              url: "https://mandrillapp.com/api/1.0/messages/send.json",
+              data: {
+                'key': '92W7qrQShJKr0-pTYL10jQ',
+                'message': {
+                  'from_email': 'ben@notionparallax.co.uk',
+                  'to': [
+                      {
+                        'email': myAddress,
+                        'name': 'RECIPIENT NAME (OPTIONAL)',
+                        'type': 'to'
+                      }
+                    ],
+                  'autotext': 'true',
+                  'subject': theirName + 'Just signed up for postednotes',
+                  'html': theirAddress
+                }
+              }
+             }).done(function(response) {
+               console.log(response); // if you're into that sorta thing
+             });
+            $(".message").html('<div class="alert alert-success" role="alert">Thanks! We&rsquo;ll be in touch.</div>');
+        }else{
+            $(".message").html('<div class="alert alert-warning" role="alert">Fill it in <em>before</em> you press send!</div>');
+        }
         return false;
     };
 
