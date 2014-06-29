@@ -35,13 +35,16 @@ svg #pigeon {
     fill:rgba(222, 30, 38, 1);
 }
 .card {
-    height:50em;
+    height:40em;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 4em;
+    padding: 2em;
     -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.card-holder{
+    padding-right: 0;
     z-index: 7000;
 }
 .envelope {
@@ -49,6 +52,7 @@ svg #pigeon {
     border: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 4em;
     padding-top: 4em;
+    padding-right: 4em;
     height: 30em;
     /*background-image:url('envelope.png');*/
     background-position: top right;
@@ -62,6 +66,9 @@ svg #pigeon {
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.envelope-holder{
+    padding-left: 0;
 }
 .stamp {
     background-color: rgba(222, 30, 38, 1);
@@ -83,9 +90,8 @@ textarea {
     height: 100%
 }
 .envelope textarea {
-    width: 80%;
-    margin-left: 20%;
-    margin-right: 20%;
+    padding-left: 20%;
+    padding-right: 15%;
 }
 .invisible-bit {
     display: none;
