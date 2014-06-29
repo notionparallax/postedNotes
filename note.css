@@ -192,7 +192,6 @@ ul.nav-menu li {
     background-size: 138%;
     border-radius: 5em;
 }
-div, span{border: 1px dashed silver;}
 
 /*media query targeting xs*/
 @media all and (max-width: 768px){
