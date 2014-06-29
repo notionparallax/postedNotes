@@ -14,7 +14,7 @@ p {
     widows: 2;
 }
 .jumbotron {
-    height:95%;
+    height:92.5%;
     position: relative;
 }
 .header-page {
@@ -33,6 +33,11 @@ p {
 }
 svg #pigeon {
     fill:rgba(222, 30, 38, 1);
+}
+.caption {
+    background-color: rgba(255,255,255,0.8);
+    margin-left:  20%;
+    margin-right: 20%;
 }
 .card {
     height:40em;
@@ -136,7 +141,6 @@ textarea {
 .where-row {
     color:white;
     background-color: rgba(62, 71, 157, 1);
-    padding-bottom: 4em;
 }
 .where-text {
     padding-top: 4em;
@@ -231,7 +235,7 @@ ul.nav-menu li {
     }
     .card {
         padding-left: 2em;
-        padding-right:2em;        
+        padding-right:2em;
     }
     .envelope {
     }
