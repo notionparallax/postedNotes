@@ -1,20 +1,17 @@
-$(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-        console.log("write clicked");
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            console.log("in if");
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                console.log("in if 2");
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 300);
-                return false;
-            }
-        }
-    });
-});
+// $(function() {
+//   $('a[href*=#]:not([href=#])').click(function() {
+//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+//       var target = $(this.hash);
+//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+//       if (target.length) {
+//         $('html,body').animate({
+//           scrollTop: target.offset().top
+//         }, 300);
+//         return false;
+//       }
+//     }
+//   });
+// });
 
 var fixBorder = function() {
     var pushBy = ($("body").width() - $(".where-row").width()) / 2;
@@ -84,23 +81,6 @@ var submit_email = function() {
     return false;
 };
 
-
-
-$(document).ready(function() {
-    fixBorder();
-    $("#realButton").click(processInputs);
-
-    $(".pro-tips").click(function() {
-        $(".pro-tips").toggleClass("pro-tips-active");
-    });
-
-});
-
-$(window).resize(function() {
-    fixBorder();
-    // console.log("resize");
-});
-
 $('#messageBox').keyup(function() {
     var count = $('#messageBox').val().length;
     if (count < 500) {
@@ -130,4 +110,21 @@ $('#addressBox').keyup(function() {
         $("#char-count-a").html("<span class='text-danger'>" + count + "</span>");
         $("#char-count-message-a").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
     }
+});
+
+$(window).resize(function() {
+    fixBorder();
+    // console.log("resize");
+});
+
+$(document).ready(function() {
+    fixBorder();
+    $("#realButton").click(processInputs);
+
+    $(".pro-tips").click(function() {
+        $(".pro-tips").toggleClass("pro-tips-active");
+    });
+
+    $(".card textarea").attr("placeholder", letter);
+    $(".envelope textarea").attr("placeholder", address);
 });
