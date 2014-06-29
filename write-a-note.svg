@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="128.69px" height="128.69px" viewBox="0 0 128.69 128.69" enable-background="new 0 0 128.69 128.69" xml:space="preserve">
+<g id="circle">
+	<g id="round_base_1_">
+		<g>
+			<circle fill-rule="evenodd" clip-rule="evenodd" fill="#72B19C" cx="64.35" cy="64.35" r="63.78"/>
+		</g>
+	</g>
+</g>
+<g id="computer">
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="64.543" y1="94.9475" x2="64.543" y2="103.6261">
+		<stop  offset="0" style="stop-color:#C9CCCC"/>
+		<stop  offset="1" style="stop-color:#EDF0F0"/>
+	</linearGradient>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="url(#SVGID_1_)" d="M72.75,96.7v-6.17H57.34v6.17c0,2.69-1.06,6.86-4.83,6.86
+		h24.08C72.81,103.57,72.75,99.39,72.75,96.7z"/>
+	<g id="body_2_">
+		<g>
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="#EDF0F0" d="M103.27,32.6H25.82c-2.35,0-4.26,1.91-4.26,4.26v50.43
+				c0,2.35,1.91,4.26,4.26,4.26h76.89c2.35,0,4.82-1.91,4.82-4.26V36.86C107.53,34.51,105.62,32.6,103.27,32.6z"/>
+		</g>
+	</g>
+	<g id="border__x26__logo">
+		<g>
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="#36434F" d="M103.3,32.57H25.82c-2.35,0-4.26,1.91-4.26,4.26
+				c0,0,0,42.75,0,42.74c0,0,85.95-0.01,86,0V36.82C107.56,34.47,105.66,32.57,103.3,32.57z M64.55,82.57
+				c-1.65,0-2.98,1.34-2.98,2.98c0,1.65,1.34,2.98,2.98,2.98c1.65,0,2.98-1.34,2.98-2.98C67.53,83.9,66.2,82.57,64.55,82.57z"/>
+		</g>
+	</g>
+	<g id="screen_2_">
+		<g>
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="#465765" d="M26.53,37.53v37.04c0.03,0.05,75.83-0.01,76,0V37.53
+				C102.54,37.54,26.53,37.53,26.53,37.53z"/>
+		</g>
+	</g>
+	<g id="layer_2_">
+		<g>
+			<rect x="52.5" y="103.57" fill-rule="evenodd" clip-rule="evenodd" fill="#36745F" width="24.08" height="0.99"/>
+		</g>
+	</g>
+</g>
+<g id="green_1_" enable-background="new    ">
+	<g id="browser">
+		<g id="base_3_">
+			<g>
+				<path fill-rule="evenodd" clip-rule="evenodd" fill="#E4E6E7" d="M100.87,41.5c0-1.3-1.1-2.36-2.47-2.36H54.92
+					c-1.36,0-2.47,1.06-2.47,2.36v29.45c0,1.3,1.1,2.36,2.47,2.36h43.52c1.36,0,2.47-1.06,2.47-2.36L100.87,41.5z"/>
+			</g>
+		</g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" d="M98,46.31v24.25H55.35V46.31C55.34,46.32,98.01,46.31,98,46.31z"
+			/>
+		<g>
+			<g id="red">
+				<g>
+					<ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#A4402B" cx="56.22" cy="42.15" rx="1.44" ry="1.38"/>
+				</g>
+			</g>
+			<g id="orange_3_">
+				<g>
+					<ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#CA7B44" cx="60.84" cy="42.15" rx="1.44" ry="1.38"/>
+				</g>
+			</g>
+			<g id="green">
+				<g>
+					<ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#72B19C" cx="65.45" cy="42.15" rx="1.44" ry="1.38"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="content">
+		<rect x="76.65" y="50.2" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="13" height="11.01"/>
+		<rect x="76.41" y="49.84" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="13" height="11.01"/>
+		<rect x="63.78" y="48.76" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="12.87" height="16.14"/>
+		<rect x="63.54" y="48.4" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="12.87" height="16.14"/>
+		<rect x="64.91" y="49.84" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<rect x="68.65" y="66.16" fill-rule="evenodd" clip-rule="evenodd" fill="#428BCA" width="7.55" height="1.48"/>
+		<rect x="64.91" y="51.64" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<rect x="64.91" y="60.63" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<rect x="64.87" y="53.44" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="10.58" height="1.09"/>
+		<rect x="64.87" y="55.23" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="10.58" height="1.09"/>
+		<rect x="64.87" y="57.03" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="10.58" height="1.09"/>
+		<rect x="64.87" y="58.83" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="10.58" height="1.09"/>
+		<rect x="78.96" y="55.23" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<rect x="78.96" y="57.03" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<rect x="78.96" y="58.83" fill-rule="evenodd" clip-rule="evenodd" fill="#7E7E7F" width="5.1" height="1.09"/>
+		<g>
+			<g>
+				<g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="62.09,69.73 60.77,69.73 61.19,69.16 62.52,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="60.77,69.73 59.44,69.73 59.86,69.16 61.19,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="59.44,69.73 58.12,69.73 58.54,69.16 59.86,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="58.12,69.73 56.79,69.73 57.21,69.16 58.54,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="67.82,69.73 66.49,69.73 66.92,69.16 68.24,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="66.49,69.73 65.17,69.73 65.59,69.16 66.92,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="65.17,69.73 63.84,69.73 64.27,69.16 65.59,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="63.84,69.73 62.52,69.73 62.94,69.16 64.27,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="73.55,69.73 72.22,69.73 72.64,69.16 73.97,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="72.22,69.73 70.9,69.73 71.32,69.16 72.64,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="70.9,69.73 69.57,69.73 69.99,69.16 71.32,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="69.57,69.73 68.24,69.73 68.67,69.16 69.99,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="79.28,69.73 77.95,69.73 78.37,69.16 79.7,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="77.95,69.73 76.62,69.73 77.05,69.16 78.37,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="76.62,69.73 75.3,69.73 75.72,69.16 77.05,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="75.3,69.73 73.97,69.73 74.39,69.16 75.72,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="85,69.73 83.68,69.73 84.1,69.16 85.43,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="83.68,69.73 82.35,69.73 82.77,69.16 84.1,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="82.35,69.73 81.02,69.73 81.45,69.16 82.77,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="81.02,69.73 79.7,69.73 80.12,69.16 81.45,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="90.73,69.73 89.4,69.73 89.83,69.16 91.15,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="89.4,69.73 88.08,69.73 88.5,69.16 89.83,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="88.08,69.73 86.75,69.73 87.17,69.16 88.5,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="86.75,69.73 85.43,69.73 85.85,69.16 87.17,69.16 
+													"/>
+					</g>
+					<g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="96.46,69.73 95.13,69.73 95.55,69.16 96.88,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" points="95.13,69.73 93.8,69.73 94.23,69.16 95.55,69.16 
+															"/>
+						</g>
+						<g>
+							<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#F5F6FA" points="93.8,69.73 92.48,69.73 92.9,69.16 94.23,69.16 
+															"/>
+						</g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#3E479D" points="92.48,69.73 91.15,69.73 91.58,69.16 92.9,69.16 
+													"/>
+					</g>
+				</g>
+			</g>
+		</g>
+		<rect x="85.67" y="52" fill-rule="evenodd" clip-rule="evenodd" fill="#DE1E26" width="1.97" height="1.3"/>
+	</g>
+</g>
+</svg>
