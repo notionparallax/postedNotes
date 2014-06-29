@@ -20,9 +20,11 @@ var letter =[
 ].join("\n");
 
 var address = [
- "Ben Doherty"
-,"3 Meeks Rd"
-,"Marrickville"
-,"2204"
-,"NSW"
+ "Mr Butler"
+,"Government House"
+,"Dunrossil Dr"
+,"Yarralumla"
+,"ACT"
+,"2600"
+,"Australia"
 ].join("\n");
