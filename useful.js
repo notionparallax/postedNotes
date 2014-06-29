@@ -4,7 +4,7 @@ var fixBorder = function() {
     $(".where-row").css("margin-right" , -pushBy);
     $(".where-row").css("padding-left" , pushBy  );
     $(".where-row").css("padding-right", pushBy  );
-    console.log([pushBy, pushBy * -1]);
+    // console.log([pushBy, pushBy * -1]);
 };
 
 var processInputs = function() {
@@ -37,7 +37,7 @@ var submit_email = function(){
         var    myAddress = "ben+postednotes@notionparallax.co.uk";
         var theirAddress = $("#email").val();
         var    theirName = $("#name").val();
-        console.log(["email button",   myAddress, theirAddress, theirName ]);
+        // console.log(["email button",   myAddress, theirAddress, theirName ]);
         if(theirAddress.length>3 && theirName.length>1){
             $.ajax({
               type: "POST",
@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 $( window ).resize( function(){
     fixBorder();
-    console.log("resize");
+    // console.log("resize");
 });
 
 $('#messageBox').keyup(function () {
