@@ -137,6 +137,9 @@ textarea {
 }
 .what-row-text {
     -webkit-column-count:3;
+       -moz-column-count:3;
+         -o-column-count:3;
+            column-count:3;
 }
 .how-row {
     padding-bottom: 4em;
@@ -258,6 +261,9 @@ ul.nav-menu li {
 @media all and (max-width: 768px){
     .what-row-text {
         -webkit-column-count:1;
+           -moz-column-count:1;
+             -o-column-count:1;
+                column-count:1;
     }
     textarea {
         border:none;
