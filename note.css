@@ -253,6 +253,20 @@ ul.nav-menu li {
 .ball-icon{
     width: 100%;
 }
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 /*media query targeting xs*/
 @media all and (max-width: 768px){
