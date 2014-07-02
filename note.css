@@ -258,6 +258,29 @@ ul.nav-menu li {
     width: 100%;
 }
 
+.paypal-wait-box{
+    margin-top: 1em;
+    height: 0;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 80%;
+    /*display: none;*/
+
+}
+.paypal-wait-box-open{
+    display: block;
+    height: inherit;
+    transition: all 0.4s ease;
+}
+.paypal-wait-icon{
+    display: block;
+    font-size: 200%;
+}
+.paypal-wait-words{
+    white-space: normal;
+    font-size: 80%;
+}
+
 /*media query targeting xs*/
 @media all and (max-width: 768px){
     .what-row-text {

@@ -45,6 +45,26 @@ var processInputs = function() {
     $("#a1").val(addressChunks1);
     $("#a2").val(addressChunks2);
 
+    if (tidyMessage.length != 0 && tidyAddress.length != 0){
+        $(".paypal-wait-box").addClass("paypal-wait-box-open");
+        $(".paypal-wait-box").slideDown( 600 );
+    }else{
+        if(tidyMessage.length === 0 && tidyAddress.length === 0){
+            $(".paypal-wait-box").html("There's something strange going on! (maybe you didn't write anything?)");
+        }else if (tidyMessage.length === 0){
+            $(".paypal-wait-box").html("There's no message body!");
+        }else if(tidyAddress.length === 0){
+            $(".paypal-wait-box").html("There's no address!");
+        }
+        else{
+            $(".paypal-wait-box").html("There's something <em>really</em> strange going on! (maybe you didn't write anything?)");
+        }
+        $(".paypal-wait-box").addClass("paypal-wait-box-open");
+        $(".paypal-wait-box").slideDown( 600 );
+        return false;
+    }
+
+
     return true;
 };
 
@@ -165,10 +185,23 @@ $(document).ready(function() {
         $(".pro-tips").toggleClass("pro-tips-active");
     });
 
-    var browser=get_browser();
-    var browser_version= parseInt(get_browser_version(),10);
-    console.log([browser,browser_version]);
-    if(browser==="Chrome" && browser_version >= 37){
+    // $("#realButton").hover(function() {
+    //     console.log("in");
+    //     $(".paypal-wait-box").addClass("paypal-wait-box-open");
+    //     $(".paypal-wait-box").slideDown( 0.5 );
+    // }
+    // ,
+    // function() {
+    //     console.log("out");
+    //     $(".paypal-wait-box").removeClass("paypal-wait-box-open");
+    //     $(".paypal-wait-box").slideUp( 0.5 );
+    // }
+    // );
+
+    var browser = get_browser();
+    var browser_version = parseInt(get_browser_version(), 10);
+    console.log([browser, browser_version]);
+    if (browser === "Chrome" && browser_version >= 37) {
         console.log("ON!!");
         $(".card textarea").attr("placeholder", letter);
         $(".envelope textarea").attr("placeholder", address);
