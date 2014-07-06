@@ -18,6 +18,10 @@ p {
     orphans: 2;
     widows: 2;
 }
+.jumbotron,.container{
+    padding: 0;
+    margin: 0;
+}
 .jumbotron {
     height:92.5%;
     position: relative;
@@ -36,6 +40,13 @@ p {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.bb{
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    bottom: 2em;
+}
 .logo-bird {
     height:8em;
 }
@@ -44,8 +55,8 @@ svg #pigeon {
 }
 .caption {
     background-color: rgba(255,255,255,0.8);
-    margin-left:  20%;
-    margin-right: 20%;
+    /*margin-left:  20%;*/
+    /*margin-right: 20%;*/
     padding: 1em;
     padding-top: 0.2em;
 }
