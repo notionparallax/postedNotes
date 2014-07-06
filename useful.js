@@ -200,10 +200,12 @@ $(document).ready(function() {
 
     var browser = get_browser();
     var browser_version = parseInt(get_browser_version(), 10);
-    console.log([browser, browser_version]);
+    console.log(["we're reading your browser as:"browser, browser_version]);
     if (browser === "Chrome" && browser_version >= 37) {
-        console.log("ON!!");
+        console.log("You've got pretty placeholder text");
         $(".card textarea").attr("placeholder", letter);
         $(".envelope textarea").attr("placeholder", address);
+    }else{
+        console.log("Sorry, you don't have pretty placeholder text");
     }
 });
