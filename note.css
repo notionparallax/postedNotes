@@ -359,29 +359,32 @@ ul.nav-menu li {
         padding-right:2em;
     }
     .envelope {
+        padding-right: 2em;
+        padding-left: 2em;
     }
-    .envelope textarea {
+   .envelope textarea {
         width: 100%;
         margin-left: 0;
-        padding-left: 20%;
-        padding-right: 40%;
+        padding-left: 10%;
+        padding-right: 10%;
     }
     .stamp{
-        margin-right: 2em;
+        margin-right: 0;
         width: 4em;
         height: 3em;
+        margin-bottom: 1em
     }
     .button-bar{
         margin-top: 0em;
     }
-    .card-error-message, .envelope-error-message{
-        top: 29%;
-        width: 60%;
-        padding-left: 3em;
+    .card-error-message{
+        top: 35%;
+        width: 75%;
+        padding-left: 0.5em;
     }
     .envelope-error-message{
-        top: 60%;
+        top: 50%;
         width: 70%;
-        padding-left: 2e
+        padding-left: 2em;
     }
 }
