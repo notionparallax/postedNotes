@@ -26,6 +26,8 @@ var processInputs = function() {
 
     console.log("processing these inputs");
 
+    var t_c_checked = $("div.t-and-c > input[type='checkbox']").is(':checked');
+
     var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
     var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
 
@@ -43,9 +45,11 @@ var processInputs = function() {
     $("#m4").val(messageChunks4);
 
     $("#a1").val(addressChunks1);
-    $("#a2").val(addressChunks2);
+    $("#a2").val(addressChunks2 + "agreed:"+t_c_checked);
 
-    if (tidyMessage.length != 0 && tidyAddress.length != 0){
+    if (tidyMessage.length != 0 &&
+        tidyAddress.length != 0 &&
+        t_c_checked){
         // If there is an address and a message then
         // display the waiting box, and send data to paypal
         $(".paypal-wait-box").addClass("visible");
@@ -53,22 +57,23 @@ var processInputs = function() {
     }else{
         // if somethign is wrong then go through these options
         if(tidyMessage.length === 0 && tidyAddress.length === 0){
-            // nothing written at all
+            //console.log("nothing written at all");
             $("#messageBox").addClass("textarea-error");
             $("#addressBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
             $(".envelope-error-message").addClass("visible");
         }else if(tidyMessage.length === 0){
-            // a message, but no address
+            //console.log("a message, but no address");
             $("#messageBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
         }else if(tidyAddress.length === 0){
-            // an address but no message
+            //console.log("an address but no message");
             $("#addressBox").addClass("textarea-error");
             $(".envelope-error-message").addClass("visible");
         }
-        else{
-            $(".paypal-wait-box").html("There's something <em>really</em> strange going on! (maybe you didn't write anything?)");
+        if(t_c_checked === false){
+            //console.log("T&Cs not ticked");
+            $(".t-and-c").append("<span class='t-and-c-error'>If you don't tick to say that you agree then we can't write your letter!</span>");
         }
         return false;
     }
@@ -112,7 +117,12 @@ var clearErrorMessages = function(){
     $("#addressBox").removeClass("textarea-error");
     $(".card-error-message").removeClass("visible");
     $(".envelope-error-message").removeClass("visible");
+    $(".t-and-c-error").remove();
 };
+
+$("div.t-and-c > input[type='checkbox']").click(function() {
+    clearErrorMessages();
+});
 
 $('#messageBox').keyup(function() {
     clearErrorMessages();//this is a bit ineficient

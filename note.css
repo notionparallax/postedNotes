@@ -263,7 +263,16 @@ ul.nav-menu li {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1em;
 }
-
+.t-and-c{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.t-and-c-error {
+    display: block;
+    padding-left: 11em;
+    color: red;
+    width: 60%;
+}
 #realButton {
     padding-bottom: 1em;
     padding-top: 0px;
@@ -386,5 +395,12 @@ ul.nav-menu li {
         top: 50%;
         width: 70%;
         padding-left: 2em;
+    }
+    .t-and-c input[type=checkbox]{
+        margin: 1.5em;
+        -webkit-transform : scale(3);
+        -moz-transform    : scale(3);
+        -o-transform      : scale(3);
+        transform         : scale(3);
     }
 }
