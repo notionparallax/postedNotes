@@ -1,4 +1,10 @@
 @charset"utf-8";
+.needs-a-rewrite{
+    color: rgb(181, 120, 8);
+    border: 1px solid red;
+    border-top: none;
+    border-bottom: none;
+}
  body {
     background: rgba(62, 71, 157, 0.05);
     overflow-x: hidden !important;
