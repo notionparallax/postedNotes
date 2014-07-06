@@ -52,41 +52,48 @@ svg #pigeon {
 .char-count{
     margin-left: 0.3em;
 }
-.card {
-    height:44em;
+.card-holder,.envelope-holder{
+    padding: 0;
+}
+.card, .envelope{
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.card {
+    height:44em;
     padding: 2em;
     -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
 }
 .card-holder{
-    padding-right: 0;
     z-index: 7000;
 }
 .envelope {
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     margin-top: 4em;
     padding-top: 4em;
     padding-right: 4em;
     height: 30em;
-    /*background-image:url('envelope.png');*/
-    background-position: top right;
-    background-repeat: no-repeat;
-    /*background-attachment: fixed; */
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
     padding-bottom: 12em;
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
 }
-.envelope-holder{
-    padding-left: 0;
+.textarea-error{
+    border:2px solid red;
+}
+.card-error-message, .envelope-error-message{
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        font-size: 1.5em;
+        color: red;
+        /* border: 1px solid; */
+        width: 85%;
+        visibility: hidden;
+    }
+.envelope-error-message{
+    top:64%;
 }
 .stamp {
     background-color: rgba(222, 30, 38, 1);
@@ -274,26 +281,33 @@ ul.nav-menu li {
 }
 
 .paypal-wait-box{
-    margin-top: 1em;
+    margin-top: 0;
     height: 0;
     overflow: hidden;
     white-space: normal;
-    font-size: 80%;
-    /*display: none;*/
-
-}
-.paypal-wait-box-open{
-    display: block;
+    font-size: 150%;
+    visibility: hidden;
     height: inherit;
-    transition: all 0.4s ease;
+}
+.visible{
+    visibility: visible;
 }
 .paypal-wait-icon{
-    display: block;
-    font-size: 200%;
+    width: 1em;
+    height: 1em;
+    float: left;
+    font-size: 300%;
+    -webkit-animation-name: rotation;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite; 
+}
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
 }
 .paypal-wait-words{
     white-space: normal;
-    font-size: 80%;
 }
 
 /*media query targeting xs*/
@@ -317,6 +331,7 @@ ul.nav-menu li {
         -moz-box-shadow: none;
         box-shadow: none;
         padding-bottom: 2em;
+        position: relative;
     }
     .card {
         padding-left: 2em;

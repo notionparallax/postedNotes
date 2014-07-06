@@ -46,26 +46,32 @@ var processInputs = function() {
     $("#a2").val(addressChunks2);
 
     if (tidyMessage.length != 0 && tidyAddress.length != 0){
-        $(".paypal-wait-box").addClass("paypal-wait-box-open");
-        $(".paypal-wait-box").slideDown( 600 );
+        // If there is an address and a message then
+        // display the waiting box, and send data to paypal
+        $(".paypal-wait-box").addClass("visible");
+        return true;
     }else{
+        // if somethign is wrong then go through these options
         if(tidyMessage.length === 0 && tidyAddress.length === 0){
-            $(".paypal-wait-box").html("There's something strange going on! (maybe you didn't write anything?)");
-        }else if (tidyMessage.length === 0){
-            $(".paypal-wait-box").html("There's no message body!");
+            // nothing written at all
+            $("#messageBox").addClass("textarea-error");
+            $("#addressBox").addClass("textarea-error");
+            $(".card-error-message").addClass("visible");
+            $(".envelope-error-message").addClass("visible");
+        }else if(tidyMessage.length === 0){
+            // a message, but no address
+            $("#messageBox").addClass("textarea-error");
+            $(".card-error-message").addClass("visible");
         }else if(tidyAddress.length === 0){
-            $(".paypal-wait-box").html("There's no address!");
+            // an address but no message
+            $("#addressBox").addClass("textarea-error");
+            $(".envelope-error-message").addClass("visible");
         }
         else{
             $(".paypal-wait-box").html("There's something <em>really</em> strange going on! (maybe you didn't write anything?)");
         }
-        $(".paypal-wait-box").addClass("paypal-wait-box-open");
-        $(".paypal-wait-box").slideDown( 600 );
         return false;
     }
-
-
-    return true;
 };
 
 var submit_email = function() {
@@ -101,7 +107,16 @@ var submit_email = function() {
     return false;
 };
 
+var clearErrorMessages = function(){
+    $("#messageBox").removeClass("textarea-error");
+    $("#addressBox").removeClass("textarea-error");
+    $(".card-error-message").removeClass("visible");
+    $(".envelope-error-message").removeClass("visible");
+};
+
 $('#messageBox').keyup(function() {
+    clearErrorMessages();//this is a bit ineficient
+
     var count = $('#messageBox').val().length;
     if (count < 500) {
         $("#char-count").html("<span class='text-success'>" + count + "</span>");
@@ -119,6 +134,8 @@ $('#messageBox').keyup(function() {
 });
 
 $('#addressBox').keyup(function() {
+    clearErrorMessages();//this is a bit ineficient
+    
     var count = $('#addressBox').val().length;
     if (count < 250) {
         $("#char-count-a").html("<span class='text-success'>" + count + "</span>");
