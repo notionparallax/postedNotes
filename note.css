@@ -49,6 +49,9 @@ svg #pigeon {
     padding: 1em;
     padding-top: 0.2em;
 }
+.char-count{
+    margin-left: 0.3em;
+}
 .card {
     height:44em;
     background-color: white;
