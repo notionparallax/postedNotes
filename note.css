@@ -118,7 +118,12 @@ textarea {
 .down-arrow {
     position: absolute;
     top: 90%;
-    width: 90%;
+    width: 100%;
+}
+.btn h3 {
+    display: inline;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 .numbered-illustration {
     position: relative;
@@ -232,7 +237,7 @@ ul.nav-menu li {
     color:rgba(222, 30, 38, 1);
     border-color:rgba(222, 30, 38, 1);
     background-color: rgba(255, 255, 255, 0.8);
-    padding-bottom: 1em;
+    padding: 1em;
 }
 
 #realButton {
