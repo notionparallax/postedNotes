@@ -103,6 +103,7 @@ svg #pigeon {
         /* border: 1px solid; */
         width: 85%;
         visibility: hidden;
+
         display: none;
     }
 .envelope-error-message{
@@ -372,5 +373,15 @@ ul.nav-menu li {
     }
     .button-bar{
         margin-top: 0em;
+    }
+    .card-error-message, .envelope-error-message{
+        top: 29%;
+        width: 60%;
+        padding-left: 3em;
+    }
+    .envelope-error-message{
+        top: 60%;
+        width: 70%;
+        padding-left: 2e
     }
 }
