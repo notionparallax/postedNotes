@@ -416,5 +416,6 @@ ul.nav-menu li {
     }
     input#email-button {
         height: 6em;/*make the button big enough to touch*/
+        margin-top: 1em;
     }
 }
