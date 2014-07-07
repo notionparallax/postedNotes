@@ -418,4 +418,7 @@ ul.nav-menu li {
         height: 6em;/*make the button big enough to touch*/
         margin-top: 1em;
     }
+    .p-and-t p {
+        line-height: 2em;
+    }
 }
