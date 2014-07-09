@@ -53,26 +53,31 @@ var processInputs = function() {
         // If there is an address and a message then
         // display the waiting box, and send data to paypal
         $(".paypal-wait-box").addClass("visible");
+        ga('send', 'event', 'success', 'click', 'all filled in!');
         return true;
     }else{
         // if somethign is wrong then go through these options
         if(tidyMessage.length === 0 && tidyAddress.length === 0){
             //console.log("nothing written at all");
+            ga('send', 'event', 'error', 'click', 'nothing written at all');
             $("#messageBox").addClass("textarea-error");
             $("#addressBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
             $(".envelope-error-message").addClass("visible");
         }else if(tidyMessage.length === 0){
             //console.log("a message, but no address");
+            ga('send', 'event', 'error', 'click', 'a message, but no address');
             $("#messageBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
         }else if(tidyAddress.length === 0){
             //console.log("an address but no message");
+            ga('send', 'event', 'error', 'click', 'an address but no message');
             $("#addressBox").addClass("textarea-error");
             $(".envelope-error-message").addClass("visible");
         }
         if(t_c_checked === false){
             //console.log("T&Cs not ticked");
+            ga('send', 'event', 'error', 'click', 'T&Cs not ticked');
             $(".t-and-c").append("<span class='t-and-c-error'>If you don't tick to say that you agree then we can't write your letter!</span>");
         }
         return false;
@@ -106,8 +111,10 @@ var submit_email = function() {
             console.log(response); // if you're into that sorta thing
         });
         $(".message").html('<div class="alert alert-success" role="alert">Thanks! We&rsquo;ll be in touch.</div>');
+        ga('send', 'event', 'success', 'click', 'email sign up');
     } else {
         $(".message").html('<div class="alert alert-warning" role="alert">Fill it in <em>before</em> you press send!</div>');
+        ga('send', 'event', 'error', 'click', 'email sign up error');
     }
     return false;
 };
@@ -122,6 +129,10 @@ var clearErrorMessages = function(){
 
 $("div.t-and-c > input[type='checkbox']").click(function() {
     clearErrorMessages();
+});
+
+$(".btn-ghost").click(function() {
+    ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
 });
 
 $('#messageBox').keyup(function() {
@@ -210,6 +221,7 @@ $(document).ready(function() {
 
     $(".pro-tips").click(function() {
         $(".pro-tips").toggleClass("pro-tips-active");
+        ga('send', 'event', 'thing', 'click', 'pro tips');
     });
 
     // $("#realButton").hover(function() {
@@ -232,6 +244,7 @@ $(document).ready(function() {
         console.log("You've got pretty placeholder text");
         $(".card textarea").attr("placeholder", letter);
         $(".envelope textarea").attr("placeholder", address);
+        ga('send', 'event', 'thing', 'start', 'pretty placeholder served');
     }else{
         console.log("Sorry, you don't have pretty placeholder text");
     }
