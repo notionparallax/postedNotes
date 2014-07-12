@@ -1,5 +1,7 @@
 @charset"utf-8";
 .needs-a-rewrite{
+    /*this is applied to paragraphs
+    that need to be rewritten*/
     color: rgb(181, 120, 8);
     border: 1px solid red;
     border-top: none;
@@ -421,4 +423,31 @@ ul.nav-menu li {
     .p-and-t p {
         line-height: 2em;
     }
+    /*media query targeting xs*/
+    /*specifically targettign iphone 4*/
+    @media all and (max-height: 900px){
+        .jumbotron {
+            font-size: 50% !important;
+        }
+        .btn h3 {
+            font-size: 1em;
+        }
+        img.ball-icon {
+            -webkit-transform-origin: top;
+            -webkit-transform: scale(2);
+
+            -moz-transform-origin: top;
+            -moz-transform: scale(2);
+
+            -o-transform-origin: top;
+            -o-transform: scale(2);
+
+            transform-origin: top;
+            transform: scale(2);
+        }
+        .where-text {
+            padding-top: 0;
+        }
+    }
 }
+
