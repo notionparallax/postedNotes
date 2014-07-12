@@ -133,6 +133,10 @@ $("div.t-and-c > input[type='checkbox']").click(function() {
 
 $(".btn-ghost").click(function() {
     ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
+
+    setTimeout(function() {
+        $("#messageBox").focus();
+        },0);
 });
 
 $('#messageBox').keyup(function() {
