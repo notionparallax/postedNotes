@@ -1,18 +1,3 @@
-// $(function() {
-//   $('a[href*=#]:not([href=#])').click(function() {
-//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-//       var target = $(this.hash);
-//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-//       if (target.length) {
-//         $('html,body').animate({
-//           scrollTop: target.offset().top
-//         }, 300);
-//         return false;
-//       }
-//     }
-//   });
-// });
-
 var fixBorder = function() {
     var pushBy = ($("body").width() - $(".where-row").width()) / 2;
     $(".where-row").css("margin-left", -pushBy);
@@ -45,37 +30,37 @@ var processInputs = function() {
     $("#m4").val(messageChunks4);
 
     $("#a1").val(addressChunks1);
-    $("#a2").val(addressChunks2 + "agreed:"+t_c_checked);
+    $("#a2").val(addressChunks2 + "agreed:" + t_c_checked);
 
     if (tidyMessage.length != 0 &&
         tidyAddress.length != 0 &&
-        t_c_checked){
+        t_c_checked) {
         // If there is an address and a message then
         // display the waiting box, and send data to paypal
         $(".paypal-wait-box").addClass("visible");
         ga('send', 'event', 'success', 'click', 'all filled in!');
         return true;
-    }else{
+    } else {
         // if somethign is wrong then go through these options
-        if(tidyMessage.length === 0 && tidyAddress.length === 0){
+        if (tidyMessage.length === 0 && tidyAddress.length === 0) {
             //console.log("nothing written at all");
             ga('send', 'event', 'error', 'click', 'nothing written at all');
             $("#messageBox").addClass("textarea-error");
             $("#addressBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
             $(".envelope-error-message").addClass("visible");
-        }else if(tidyMessage.length === 0){
+        } else if (tidyMessage.length === 0) {
             //console.log("a message, but no address");
             ga('send', 'event', 'error', 'click', 'a message, but no address');
             $("#messageBox").addClass("textarea-error");
             $(".card-error-message").addClass("visible");
-        }else if(tidyAddress.length === 0){
+        } else if (tidyAddress.length === 0) {
             //console.log("an address but no message");
             ga('send', 'event', 'error', 'click', 'an address but no message');
             $("#addressBox").addClass("textarea-error");
             $(".envelope-error-message").addClass("visible");
         }
-        if(t_c_checked === false){
+        if (t_c_checked === false) {
             //console.log("T&Cs not ticked");
             ga('send', 'event', 'error', 'click', 'T&Cs not ticked');
             $(".t-and-c").append("<span class='t-and-c-error'>If you don't tick to say that you agree then we can't write your letter!</span>");
@@ -119,7 +104,7 @@ var submit_email = function() {
     return false;
 };
 
-var clearErrorMessages = function(){
+var clearErrorMessages = function() {
     $("#messageBox").removeClass("textarea-error");
     $("#addressBox").removeClass("textarea-error");
     $(".card-error-message").removeClass("visible");
@@ -131,16 +116,8 @@ $("div.t-and-c > input[type='checkbox']").click(function() {
     clearErrorMessages();
 });
 
-$(".btn-ghost").click(function() {
-    ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
-
-    setTimeout(function() {
-        $("#messageBox").focus();
-        },0);
-});
-
 $('#messageBox').keyup(function() {
-    clearErrorMessages();//this is a bit ineficient
+    clearErrorMessages(); //this is a bit ineficient
 
     var count = $('#messageBox').val().length;
     if (count < 500) {
@@ -159,8 +136,8 @@ $('#messageBox').keyup(function() {
 });
 
 $('#addressBox').keyup(function() {
-    clearErrorMessages();//this is a bit ineficient
-    
+    clearErrorMessages(); //this is a bit ineficient
+
     var count = $('#addressBox').val().length;
     if (count < 250) {
         $("#char-count-a").html("<span class='text-success'>" + count + "</span>");
@@ -219,37 +196,49 @@ function get_browser_version() {
     return M[1];
 }
 
+var giveMessageFocus = function() {
+    console.log("giving focus to message");
+    setTimeout(function() {
+        $("#messageBox").focus();
+    }, 0);
+};
+
 $(document).ready(function() {
-    fixBorder();
-    $("#realButton").click(processInputs);
+            fixBorder();
+            $("#realButton").click(processInputs);
 
-    $(".pro-tips").click(function() {
-        $(".pro-tips").toggleClass("pro-tips-active");
-        ga('send', 'event', 'thing', 'click', 'pro tips');
-    });
+            $(".pro-tips").click(function() {
+                $(".pro-tips").toggleClass("pro-tips-active");
+                ga('send', 'event', 'thing', 'click', 'pro tips');
+            });
 
-    // $("#realButton").hover(function() {
-    //     console.log("in");
-    //     $(".paypal-wait-box").addClass("paypal-wait-box-open");
-    //     $(".paypal-wait-box").slideDown( 0.5 );
-    // }
-    // ,
-    // function() {
-    //     console.log("out");
-    //     $(".paypal-wait-box").removeClass("paypal-wait-box-open");
-    //     $(".paypal-wait-box").slideUp( 0.5 );
-    // }
-    // );
+            var browser = get_browser();
+            var browser_version = parseInt(get_browser_version(), 10);
+            console.log(["we're reading your browser as:", browser, browser_version]);
+            if (browser === "Chrome" && browser_version >= 37) {
+                console.log("You've got pretty placeholder text");
+                $(".card textarea").attr("placeholder", letter);
+                $(".envelope textarea").attr("placeholder", address);
+                ga('send', 'event', 'thing', 'start', 'pretty placeholder served');
+            } else {
+                console.log("Sorry, you don't have pretty placeholder text");
+            }
 
-    var browser = get_browser();
-    var browser_version = parseInt(get_browser_version(), 10);
-    console.log(["we're reading your browser as:",browser, browser_version]);
-    if (browser === "Chrome" && browser_version >= 37) {
-        console.log("You've got pretty placeholder text");
-        $(".card textarea").attr("placeholder", letter);
-        $(".envelope textarea").attr("placeholder", address);
-        ga('send', 'event', 'thing', 'start', 'pretty placeholder served');
-    }else{
-        console.log("Sorry, you don't have pretty placeholder text");
-    }
-});
+            // scroll to the writing box
+            $('.btn-ghost').click(function() {
+                ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
+
+                var offset = $("#note").offset().top;
+                console.log("offset: "+ offset);
+                $(document.body).stop().animate(
+                    {'scrollTop': offset},
+                    600,
+                    "swing",
+                    giveMessageFocus
+                );
+                return false;
+            });
+
+
+
+            });

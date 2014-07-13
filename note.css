@@ -10,7 +10,7 @@
 /*everywhere stuff*/
 body {
     background: rgba(62, 71, 157, 0.05);
-    overflow-x: hidden !important;
+    /*overflow-x: hidden !important;*/
     font-family: "Roboto Slab";
     font-weight: 300;
 }
