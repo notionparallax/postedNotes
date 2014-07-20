@@ -120,6 +120,14 @@ $('#messageBox').keyup(function() {
     clearErrorMessages(); //this is a bit ineficient
 
     var count = $('#messageBox').val().length;
+
+    if (document.postedNotesOneOffEventFlags.haswrittenSomeMessage == false && count > 0) {
+        //the count is there to stop the keyup from a tab being the thing that triggers this event.
+        ga('send', 'event', 'write', 'start', 'message');
+        console.log("started writing the message");
+        document.postedNotesOneOffEventFlags.haswrittenSomeMessage = true;
+    }
+
     if (count < 500) {
         $("#char-count").html("<span class='text-success'>" + count + "</span>");
         $("#char-count-message").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
@@ -139,6 +147,13 @@ $('#addressBox').keyup(function() {
     clearErrorMessages(); //this is a bit ineficient
 
     var count = $('#addressBox').val().length;
+
+    if (document.postedNotesOneOffEventFlags.haswrittenSomeAddress == false && count > 0) {
+        ga('send', 'event', 'write', 'start', 'address');
+        console.log("started writing the address");
+        document.postedNotesOneOffEventFlags.haswrittenSomeAddress = true;
+    }
+
     if (count < 250) {
         $("#char-count-a").html("<span class='text-success'>" + count + "</span>");
         $("#char-count-message-a").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
@@ -204,41 +219,61 @@ var giveMessageFocus = function() {
 };
 
 $(document).ready(function() {
-            fixBorder();
-            $("#realButton").click(processInputs);
+    fixBorder();
+    $("#realButton").click(processInputs);
 
-            $(".pro-tips").click(function() {
-                $(".pro-tips").toggleClass("pro-tips-active");
-                ga('send', 'event', 'thing', 'click', 'pro tips');
-            });
+    $(".pro-tips").click(function() {
+        $(".pro-tips").toggleClass("pro-tips-active");
+        ga('send', 'event', 'thing', 'click', 'pro tips');
+    });
 
-            var browser = get_browser();
-            var browser_version = parseInt(get_browser_version(), 10);
-            console.log(["we're reading your browser as:", browser, browser_version]);
-            if (browser === "Chrome" && browser_version >= 37) {
-                console.log("You've got pretty placeholder text");
-                $(".card textarea").attr("placeholder", letter);
-                $(".envelope textarea").attr("placeholder", address);
-                ga('send', 'event', 'thing', 'start', 'pretty placeholder served');
-            } else {
-                console.log("Sorry, you don't have pretty placeholder text");
-            }
+    var browser = get_browser();
+    var browser_version = parseInt(get_browser_version(), 10);
+    console.log(["we're reading your browser as:", browser, browser_version]);
+    if (browser === "Chrome" && browser_version >= 37) {
+        console.log("You've got pretty placeholder text");
+        $(".card textarea").attr("placeholder", letter);
+        $(".envelope textarea").attr("placeholder", address);
+        ga('send', 'event', 'thing', 'start', 'pretty placeholder served');
+    } else {
+        console.log("Sorry, you don't have pretty placeholder text");
+    }
 
-            // scroll to the writing box
-            $('.btn-ghost').click(function() {
-                ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
+    // scroll to the writing box
+    $('.btn-ghost').click(function() {
+        ga('send', 'event', 'thing', 'click', 'jumped straight to writing');
 
-                var offset = $("#note").offset().top;
-                console.log("offset: "+ offset);
-                $(document.body).stop().animate(
-                    {'scrollTop': offset},
-                    600,
-                    "swing",
-                    giveMessageFocus
-                );
-                return false;
-            });
+        var offset = $("#note").offset().top;
+        console.log("offset: " + offset);
+        $(document.body).stop().animate({
+                'scrollTop': offset
+            },
+            600,
+            "swing",
+            giveMessageFocus
+        );
+        return false;
+    });
 
+    document.postedNotesOneOffEventFlags = new Object();
+    document.postedNotesOneOffEventFlags.hasScrolled = false;
+    document.postedNotesOneOffEventFlags.haswrittenSomeMessage = false;
+    document.postedNotesOneOffEventFlags.haswrittenSomeAddress = false;
 
+    $("body").scroll(function() {
+        //captures if the user scrolls first or clicks the 'start writing now' button first
+        //as that button triggers a scroll there will be a pair of events click, then scroll.
+        //is they scroll first it'll be scroll, do other things.
+        if(document.postedNotesOneOffEventFlags.hasScrolled==false){
+            console.log("did a scrolly");
+            ga('send', 'event', 'scrolled');
+            document.postedNotesOneOffEventFlags.hasScrolled = true;
+        }
+    });
 
-            });
+    $(window).bind("beforeunload", function() {
+        //I have no idea if this is working!
+        ga('send', 'event', 'close', JSON.stringify(document.postedNotesOneOffEventFlags));
+    });
+
+});
