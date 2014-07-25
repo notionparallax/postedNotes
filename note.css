@@ -7,7 +7,12 @@
   color: #b57808;
   border: 1px solid red;
   border-top: none;
-  border-bottom: none; }
+  border-bottom: none;
+}
+/*for hiding things from screen readers*/
+.dont-read {
+    speak: none;
+}
 
 /*everywhere stuff*/
 body {
