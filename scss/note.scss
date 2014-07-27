@@ -437,7 +437,7 @@ ul.nav-menu {
     }
     /*media query targeting xs*/
     /*specifically targeting iphone 4*/
-    @media all and (max-height: 900px) and (min-height: 480px){
+    @media all and (max-height: 900px) and (min-height: 481px){
         .jumbotron {
             font-size: 40% !important;
         }
@@ -460,6 +460,8 @@ ul.nav-menu {
         .where-text {
             padding-top: 0;
         }
+    }
+    @media all and (max-height: 480px){
         svg.logo-bird {
             /* the bird seems to be using up too much space on really small screens*/
             display: none;
@@ -467,7 +469,7 @@ ul.nav-menu {
         .stamp svg.logo-bird {
             /*this feels a bit backwards*/
             display: inherit;
-            }
+        }
     }
 }
 
