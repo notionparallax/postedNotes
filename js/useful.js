@@ -112,67 +112,6 @@ var clearErrorMessages = function() {
     $(".t-and-c-error").remove();
 };
 
-var doThisOnKeyup = function(selector, gaMessage, warnChars, maxChars) {
-    clearErrorMessages(); //this is a bit ineficient
-
-    var count = $(selector).val().length;
-
-    if (document.postedNotesOneOffEventFlags.haswrittenSomeMessage == false && count > 0) {
-        //the count is there to stop the keyup from a tab being the thing that triggers this event.
-        ga('send', 'event', 'write', 'start', gaMessage);
-        console.log("started writing the " + gaMessage);
-        document.postedNotesOneOffEventFlags.haswrittenSomeMessage = true;
-    }
-
-    if (count < warnChars) {
-        $("#char-count").html("<span class='text-success'>" + count + "</span>");
-        $("#char-count-message").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
-    } else if (count <= maxChars) {
-        $("#char-count").html("<span class='text-warning'>" + count + "</span>");
-        $("#char-count-message").html("<span class='text-warning'>Time to start winding it up</span>");
-    } else if (count > maxChars) {
-        $("#char-count").html("<span class='text-danger'>" + count + "</span>");
-        $("#char-count-message").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
-    } else {
-        console.log(["the bogey man commeth", count]);
-    }
-
-}
-
-$('#messageBox').keyup( doThisOnKeyup('#messageBox','message', 500, 800) );
-
-$('#addressBox').keyup(function() {
-    clearErrorMessages(); //this is a bit ineficient
-
-    var count = $('#addressBox').val().length;
-
-    if (document.postedNotesOneOffEventFlags.haswrittenSomeAddress == false && count > 0) {
-        ga('send', 'event', 'write', 'start', 'address');
-        console.log("started writing the address");
-        document.postedNotesOneOffEventFlags.haswrittenSomeAddress = true;
-    }
-
-    if (count < 250) {
-        $("#char-count-a").html("<span class='text-success'>" + count + "</span>");
-        $("#char-count-message-a").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
-    } else if (count <= 400) {
-        $("#char-count-a").html("<span class='text-warning'>" + count + "</span>");
-        $("#char-count-message-a").html("<span class='text-warning'>Time to start winding it up</span>");
-    } else if (count > 400) {
-        $("#char-count-a").html("<span class='text-danger'>" + count + "</span>");
-        $("#char-count-message-a").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
-    }
-});
-
-$("div.t-and-c > input[type='checkbox']").click(function() {
-    clearErrorMessages();
-});
-
-$(window).resize(function() {
-    fixBorder();
-    // console.log("resize");
-});
-
 function get_browser() {
     var ua = navigator.userAgent,
         tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
@@ -220,8 +159,66 @@ var giveMessageFocus = function() {
     }, 0);
 };
 
-$(document).ready(function() {
+var doThisOnKeyup = function(event) {
+    var selector  = event.data.selector;
+    var magicWord = event.data.magicWord;
+    var warnChars = event.data.warnChars;
+    var maxChars  = event.data.maxChars;
+
+    clearErrorMessages(); //this feels a bit ineficient
+
+    var count = $(selector).val().length;
+
+    var propertyName = "haswrittenSome_" + magicWord;
+    if (document.postedNotesOneOffEventFlags[propertyName] == false && count > 0) {
+        //the count is there to stop the keyup from a tab being the thing that triggers this event.
+        ga('send', 'event', 'write', 'start', magicWord);
+        console.log(propertyName);
+        document.postedNotesOneOffEventFlags[propertyName] = true;
+    }
+
+    var numberAreaSelector  = "#char-count-number-"+ magicWord;
+    var messageAreaSelector = "#char-count-" + magicWord
+    if (count < warnChars) {
+        $(numberAreaSelector ).html("<span class='text-success'>" + count + "</span>");
+        $(messageAreaSelector).html("<span class='glyphicon glyphicon-thumbs-up'></span>");
+    } else if (count <= maxChars) {
+        $(numberAreaSelector ).html("<span class='text-warning'>" + count + "</span>");
+        $(messageAreaSelector).html("<span class='text-warning'>Time to start winding it up</span>");
+    } else if (count > maxChars) {
+        $(numberAreaSelector ).html("<span class='text-danger'>" + count + "</span>");
+        $(messageAreaSelector).html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
+    } else {
+        console.log(["the bogey man commeth", count, target]);
+    }
+
+};
+
+
+
+$(window).resize(function() {
     fixBorder();
+    // console.log("resize");
+});
+
+$(document).ready(function() {
+    //declare things for analytics
+    document.postedNotesOneOffEventFlags = new Object();
+    document.postedNotesOneOffEventFlags.hasScrolled = false;
+    document.postedNotesOneOffEventFlags.haswrittenSome_message = false;
+    document.postedNotesOneOffEventFlags.haswrittenSome_address = false;
+
+    //fix the border of the blue section - this makes me sad
+    fixBorder();
+
+    //register events
+    $('#messageBox').keyup({selector: '#messageBox', magicWord: 'message', warnChars: 500, maxChars: 800}, doThisOnKeyup );
+    $('#addressBox').keyup({selector: '#addressBox', magicWord: 'address', warnChars: 250, maxChars: 400}, doThisOnKeyup );
+
+    $("div.t-and-c > input[type='checkbox']").click(function() {
+        clearErrorMessages();
+    });
+
     $("#realButton").click(processInputs);
 
     $(".pro-tips").click(function() {
@@ -256,11 +253,6 @@ $(document).ready(function() {
         );
         return false;
     });
-
-    document.postedNotesOneOffEventFlags = new Object();
-    document.postedNotesOneOffEventFlags.hasScrolled = false;
-    document.postedNotesOneOffEventFlags.haswrittenSomeMessage = false;
-    document.postedNotesOneOffEventFlags.haswrittenSomeAddress = false;
 
     $("body").scroll(function() {
         //captures if the user scrolls first or clicks the 'start writing now' button first
