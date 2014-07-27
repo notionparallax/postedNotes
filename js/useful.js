@@ -16,13 +16,17 @@ var processInputs = function() {
     var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
     var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
 
-    var messageChunks1 = tidyMessage.slice(0, 200);
+    var messageChunks1 = tidyMessage.slice(0  , 200);
     var messageChunks2 = tidyMessage.slice(200, 400);
     var messageChunks3 = tidyMessage.slice(400, 600);
     var messageChunks4 = tidyMessage.slice(600, 800);
 
-    var addressChunks1 = tidyAddress.slice(0, 200);
+    var addressChunks1 = tidyAddress.slice(0  , 200);
     var addressChunks2 = tidyAddress.slice(200, 400);
+
+    var messageWritten = true;
+    var addressWritten = true;
+    var tancTicked     = true;
 
     $("#m1").val(messageChunks1);
     $("#m2").val(messageChunks2);
@@ -42,29 +46,25 @@ var processInputs = function() {
         return true;
     } else {
         // if somethign is wrong then go through these options
-        if (tidyMessage.length === 0 && tidyAddress.length === 0) {
-            //console.log("nothing written at all");
-            ga('send', 'event', 'error', 'click', 'nothing written at all');
+        if (tidyMessage.length === 0) {
             $("#messageBox").addClass("textarea-error");
-            $("#addressBox").addClass("textarea-error");
+            $(".card-error-message").html("You haven't written anything!");
             $(".card-error-message").addClass("visible");
-            $(".envelope-error-message").addClass("visible");
-        } else if (tidyMessage.length === 0) {
-            //console.log("a message, but no address");
-            ga('send', 'event', 'error', 'click', 'a message, but no address');
-            $("#messageBox").addClass("textarea-error");
-            $(".card-error-message").addClass("visible");
-        } else if (tidyAddress.length === 0) {
-            //console.log("an address but no message");
-            ga('send', 'event', 'error', 'click', 'an address but no message');
+            messageWritten = false;
+        }
+        if (tidyAddress.length === 0) {
             $("#addressBox").addClass("textarea-error");
+            $(".envelope-error-message").html("Where should we send it?");
             $(".envelope-error-message").addClass("visible");
+            addressWritten = false;
         }
         if (t_c_checked === false) {
-            //console.log("T&Cs not ticked");
-            ga('send', 'event', 'error', 'click', 'T&Cs not ticked');
-            $(".t-and-c").append("<span class='t-and-c-error'>If you don't tick to say that you agree then we can't write your letter!</span>");
+            $(".t-and-c-error").html("If you don't tick to say that you agree then we can't write your letter!");
+            $(".t-and-c-error").addClass("visible");
+            tancTicked = false;
         }
+        ga('send', 'event', 'error', 'click',
+            "messageWritten:"+messageWritten+"addressWritten:"+addressWritten+"tancTicked:"+tancTicked );
         return false;
     }
 };
@@ -109,7 +109,7 @@ var clearErrorMessages = function() {
     $("#addressBox").removeClass("textarea-error");
     $(".card-error-message").removeClass("visible");
     $(".envelope-error-message").removeClass("visible");
-    $(".t-and-c-error").remove();
+    $(".t-and-c-error").removeClass("visible");
 };
 
 function get_browser() {
@@ -215,15 +215,19 @@ $(document).ready(function() {
     $('#messageBox').keyup({selector: '#messageBox', magicWord: 'message', warnChars: 500, maxChars: 800}, doThisOnKeyup );
     $('#addressBox').keyup({selector: '#addressBox', magicWord: 'address', warnChars: 250, maxChars: 400}, doThisOnKeyup );
 
-    $("div.t-and-c > input[type='checkbox']").click(function() {
-        clearErrorMessages();
-    });
+    $("input[type='checkbox']").click(clearErrorMessages);
 
     $("#realButton").click(processInputs);
 
-    $(".pro-tips").click(function() {
+    var toggleProTips = function() {
         $(".pro-tips").toggleClass("pro-tips-active");
         ga('send', 'event', 'thing', 'click', 'pro tips');
+    }
+
+    $(".pro-tips").click(toggleProTips);
+    $(".pro-tips").keypress(function(e) {
+        if(e.which == 13) {  toggleProTips(); }
+        ga('send', 'event', 'thing', 'click', 'pro tips KB');
     });
 
     var browser = get_browser();
@@ -270,4 +274,5 @@ $(document).ready(function() {
         ga('send', 'event', 'close', JSON.stringify(document.postedNotesOneOffEventFlags));
     });
 
+    $(document).focus();
 });

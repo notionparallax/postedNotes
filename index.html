@@ -150,10 +150,10 @@
         <div class="row note-row" id="nr"> <!--writing stuff-->
 
             <div class="pro-tips hidden-xs hidden-sm">
-                <h3>pro tips <span class="glyphicon glyphicon-question-sign"></span></h3>
+                <h3 tabindex=0>pro tips <span class="glyphicon glyphicon-question-sign"></span></h3>
                 <p>If you begin a line with a <code>&gt;</code> we'll right align it. This is handy for formatting addresses.</p>
                 <p>If you put a line of text in between angle brackets:<br><code>&gt; your text here &lt;</code><br>then we'll indent it both sides, and if possible, centre it.</p>
-                <p>If you run your text through the <a href="http://www.hemingwayapp.com/">Hemmingway App</a> it almost always comes out better for it!</p>
+                <p>If you run your text through the <a tabindex="-1" href="http://www.hemingwayapp.com/">Hemmingway App</a> it almost always comes out better for it!</p>
             </div>
 
             <h2 id="note">Your note&hellip;</h2>
@@ -171,7 +171,7 @@
                         <label for="message">Message: </label> <span class="char-count" id="char-count-number-message">0</span>/800 <span id="char-count-message"></span>
                         <div class="card">
                             <textarea rows="5" cols="60" name="message" id="messageBox" placeholder="Write your letter here..." maxlength="850"></textarea>
-                            <div class="card-error-message">You haven't written anything!</div>
+                            <div class="card-error-message"></div>
                         </div>
                     </div>
 
@@ -188,7 +188,7 @@
                                 </svg>
                             </div>
                             <textarea rows="5" cols="60" name="address" id="addressBox" placeholder="Write the address here..." maxlength="450"></textarea>
-                            <div class="envelope-error-message">Where should we send it?</div>
+                            <div class="envelope-error-message"></div>
                         </div>
                     </div>
                 </div>
@@ -221,6 +221,7 @@
                     <label for="agree_t_and_c">Ts &amp; Cs
                     <input type="checkbox" name="agree_t_and_c"></label>
                     <span class="tc-text">Tick to say that you <a href="#rules">agree to 'the rules' below</a>.</span>
+                    <span class='t-and-c-error'></span>
                 </div>
                 <div class="button-bar">
                 <!-- ripped from button for validator reasons -->
