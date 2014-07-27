@@ -88,8 +88,8 @@ var submit_email = function() {
                         'type': 'to'
                     }],
                     'autotext': 'true',
-                    'subject': theirName + ' Just signed up for postednotes',
-                    'html': theirAddress
+                    'subject':   theirName + ' Just signed up for postednotes',
+                    'html':      theirAddress
                 }
             }
         }).done(function(response) {
@@ -112,36 +112,34 @@ var clearErrorMessages = function() {
     $(".t-and-c-error").remove();
 };
 
-$("div.t-and-c > input[type='checkbox']").click(function() {
-    clearErrorMessages();
-});
-
-$('#messageBox').keyup(function() {
+var doThisOnKeyup = function(selector, gaMessage, warnChars, maxChars) {
     clearErrorMessages(); //this is a bit ineficient
 
-    var count = $('#messageBox').val().length;
+    var count = $(selector).val().length;
 
     if (document.postedNotesOneOffEventFlags.haswrittenSomeMessage == false && count > 0) {
         //the count is there to stop the keyup from a tab being the thing that triggers this event.
-        ga('send', 'event', 'write', 'start', 'message');
-        console.log("started writing the message");
+        ga('send', 'event', 'write', 'start', gaMessage);
+        console.log("started writing the " + gaMessage);
         document.postedNotesOneOffEventFlags.haswrittenSomeMessage = true;
     }
 
-    if (count < 500) {
+    if (count < warnChars) {
         $("#char-count").html("<span class='text-success'>" + count + "</span>");
         $("#char-count-message").html("<span class='glyphicon glyphicon-thumbs-up'></span>");
-    } else if (count <= 800) {
+    } else if (count <= maxChars) {
         $("#char-count").html("<span class='text-warning'>" + count + "</span>");
         $("#char-count-message").html("<span class='text-warning'>Time to start winding it up</span>");
-    } else if (count > 800) {
+    } else if (count > maxChars) {
         $("#char-count").html("<span class='text-danger'>" + count + "</span>");
         $("#char-count-message").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
     } else {
         console.log(["the bogey man commeth", count]);
     }
 
-});
+}
+
+$('#messageBox').keyup( doThisOnKeyup('#messageBox','message', 500, 800) );
 
 $('#addressBox').keyup(function() {
     clearErrorMessages(); //this is a bit ineficient
@@ -164,6 +162,10 @@ $('#addressBox').keyup(function() {
         $("#char-count-a").html("<span class='text-danger'>" + count + "</span>");
         $("#char-count-message-a").html("<span class='text-danger'>Too many characters, you need to trim a little.</span>");
     }
+});
+
+$("div.t-and-c > input[type='checkbox']").click(function() {
+    clearErrorMessages();
 });
 
 $(window).resize(function() {
