@@ -427,31 +427,48 @@ ul.nav-menu {
     .p-and-t p {
         line-height: 2em;
     }
+    .tc-text{
+        display: inline-block;
+        width: 50%;
+        -webkit-transform: translateY(2em);
+        -moz-transform: translateY(2em);
+        -o-transform: translateY(2em);
+        transform: translateY(2em);
+    }
     /*media query targeting xs*/
-    /*specifically targettign iphone 4*/
-    @media all and (max-height: 900px){
+    /*specifically targeting iphone 4*/
+    @media all and (max-height: 900px) and (min-height: 480px){
         .jumbotron {
-            font-size: 50% !important;
+            font-size: 40% !important;
         }
         .btn h3 {
             font-size: 1em;
         }
         img.ball-icon {
             -webkit-transform-origin: top;
-            -webkit-transform: scale(1);
+            -webkit-transform: scale(2);
 
             -moz-transform-origin: top;
-            -moz-transform: scale(1);
+            -moz-transform: scale(2);
 
             -o-transform-origin: top;
-            -o-transform: scale(1);
+            -o-transform: scale(2);
 
             transform-origin: top;
-            transform: scale(1);
+            transform: scale(2);
         }
         .where-text {
             padding-top: 0;
         }
+        svg.logo-bird {
+            /* the bird seems to be using up too much space on really small screens*/
+            display: none;
+        }
+        .stamp svg.logo-bird {
+            /*this feels a bit backwards*/
+            display: inherit;
+            }
     }
 }
+
 
