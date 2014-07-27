@@ -166,9 +166,11 @@
                                 col-sm-12
                                 col-md-5
                                 col-md-offset-1">
-                        <label for="message">Message: </label> <span class="char-count" id="char-count-number-message">0</span>/800 <span id="char-count-message"></span>
+                        <label for="messageBox">Message: </label> <span class="char-count" id="char-count-number-message">0</span>/800 <span id="char-count-message"></span>
                         <div class="card">
-                            <textarea rows="5" cols="60" name="message" id="messageBox" placeholder="Write your letter here..." maxlength="850"></textarea>
+                            <textarea name="messageBox" id="messageBox"
+                                      rows="5" cols="60" maxlength="850"
+                                      placeholder="Write your letter here..."></textarea>
                             <div class="card-error-message"></div>
                         </div>
                     </div>
@@ -176,7 +178,7 @@
                     <div class="envelope-holder
                                 col-sm-12
                                 col-md-5">
-                        <label for="address">Address: </label><span class="char-count" id="char-count-number-address">0</span>/400 <span id="char-count-address"></span>
+                        <label for="addressBox">Address: </label><span class="char-count" id="char-count-number-address">0</span>/400 <span id="char-count-address"></span>
                         <div class="envelope">
                             <div class="stamp pull-right">
                                 <svg class="logo-bird" version="1.1" viewBox="0 0 163 180">
@@ -185,7 +187,9 @@
                                     </g>
                                 </svg>
                             </div>
-                            <textarea rows="5" cols="60" name="address" id="addressBox" placeholder="Write the address here..." maxlength="450"></textarea>
+                            <textarea name="addressBox" id="addressBox" 
+                                      rows="5" cols="60" maxlength="450"
+                                      placeholder="Write the address here..." ></textarea>
                             <div class="envelope-error-message"></div>
                         </div>
                     </div>
@@ -218,7 +222,7 @@
                 </div>
                 <div class="t-and-c">
                     <label for="agree_t_and_c">Ts &amp; Cs
-                    <input type="checkbox" name="agree_t_and_c"></label>
+                    <input type="checkbox" name="agree_t_and_c" id="agree_t_and_c"></label>
                     <span class="tc-text">Tick to say that you <a href="#rules">agree to 'the rules' below</a>.</span>
                     <span class='t-and-c-error'></span>
                 </div>
