@@ -11,7 +11,7 @@ var processInputs = function() {
 
     console.log("processing these inputs");
 
-    var t_c_checked = $("div.t-and-c > input[type='checkbox']").is(':checked');
+    var t_c_checked = $("input[type='checkbox']").is(':checked');
 
     var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
     var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
@@ -41,6 +41,7 @@ var processInputs = function() {
         t_c_checked) {
         // If there is an address and a message then
         // display the waiting box, and send data to paypal
+        $(".paypal-wait-words").html("Hold on a tick, PayPal will take it from here.");
         $(".paypal-wait-box").addClass("visible");
         ga('send', 'event', 'success', 'click', 'all filled in!');
         return true;
