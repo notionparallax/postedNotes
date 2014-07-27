@@ -444,18 +444,8 @@ ul.nav-menu {
         .btn h3 {
             font-size: 1em;
         }
-        img.ball-icon {
-            -webkit-transform-origin: top;
-            -webkit-transform: scale(2);
-
-            -moz-transform-origin: top;
-            -moz-transform: scale(2);
-
-            -o-transform-origin: top;
-            -o-transform: scale(2);
-
-            transform-origin: top;
-            transform: scale(2);
+        div.baller {
+            padding: 0;
         }
         .where-text {
             padding-top: 0;
