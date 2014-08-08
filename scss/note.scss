@@ -186,6 +186,9 @@ textarea {
 }
 .letter-box-open{
     height:inherit;
+    &:before {
+        content:'';
+    }
 }
 .note-row {
     padding-bottom: 4em;
@@ -244,12 +247,11 @@ textarea {
     top: 7%;
     width: 2em;
     padding: 0.3em;
-    border-radius: 1em;
-    border-width: 0.2em;
-    border-color: white;
+    border-radius: 50%;
     background-color: rgba(222, 30, 38, 1);
     font-size: 2em;
     color: white;
+    text-align: center;
 }
 .what-row {
     padding-bottom: 4em;
@@ -389,9 +391,12 @@ ul.nav-menu {
         width: 100%;
         height: 50%
     }
-    .example-letter-box{
-        height:7em;
+    .example-letter-box {
+        height:inherit;
     }
+    .example-letter-box:before {
+        content:'';
+    }​
     .row{
         margin: 0;
     }

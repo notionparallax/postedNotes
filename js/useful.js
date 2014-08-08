@@ -220,7 +220,9 @@ $(document).ready(function() {
 
     $("#realButton").click(processInputs);
 
+
     $(".example-letter").click(function(){$(".example-letter-box").toggleClass("letter-box-open");});
+    // $('.example-letter').attr('src', 'img/example-letter.jpg');
 
     var toggleProTips = function() {
         $(".pro-tips").toggleClass("pro-tips-active");
