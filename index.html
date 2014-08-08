@@ -9,17 +9,31 @@
     </title>
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- JQuery -->
-    <!-- not async to make sure it loads before all the other things that depend on it -->
-    <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script async defer src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- Font -->
-    <link async defer href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
-    <!-- Posted notes specific -->
-    <script async defer src="js/header.js"></script>
-    <link async defer  type="text/css" rel="stylesheet" href="note.css">
+    <style type="text/css" media="screen">
+        .header-page {
+            color: #de1e26;
+            background-image: url("img/writing-a-letter.gif");
+            /* background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG'); */
+            background-position: center center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            height: 92.5%;
+            position: relative;
+            padding: 2em;
+        }
+        .logo-bird {
+            height: 6em;
+        }
+        .caption {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1em;
+            padding-top: 0.2em;
+        }
+        
+    </style>
 
     <!-- FB snippet stuff -->
     <meta property="og:title" content="PostedNot.es" />
@@ -37,7 +51,7 @@
 </head>
 
 <body>
-    <header class="jumbotron header-page">
+    <header class="header-page">
         <!--cover page-->
         <div class="container">
             <!-- <ul class="nav-menu">
@@ -317,6 +331,18 @@ Ben" style="width: 70%;"/>
 
     </div>
     <!--end container-->
+
+    <!-- JQuery -->
+    <!-- not async to make sure it loads before all the other things that depend on it -->
+    <script defer src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script async defer src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Font -->
+    <link async defer href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+    <!-- Posted notes specific -->
+    <script async defer src="js/header.js"></script>
+    <link async defer  type="text/css" rel="stylesheet" href="note.css">
 
 
     <script async src="js/letter.js"></script>
