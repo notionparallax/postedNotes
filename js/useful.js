@@ -34,7 +34,7 @@ var processInputs = function() {
     $("#m4").val(messageChunks4);
 
     $("#a1").val(addressChunks1);
-    $("#a2").val(addressChunks2 + "agreed:" + t_c_checked);
+    $("#a2").val(addressChunks2 + "`agreed:" + t_c_checked + "`pen:" + document.postedNotes.pentype);
 
     if (tidyMessage.length != 0 &&
         tidyAddress.length != 0 &&
@@ -171,11 +171,11 @@ var doThisOnKeyup = function(event) {
     var count = $(selector).val().length;
 
     var propertyName = "haswrittenSome_" + magicWord;
-    if (document.postedNotesOneOffEventFlags[propertyName] == false && count > 0) {
+    if (document.postedNotes.OneOffEventFlags[propertyName] == false && count > 0) {
         //the count is there to stop the keyup from a tab being the thing that triggers this event.
         ga('send', 'event', 'write', 'start', magicWord);
         console.log(propertyName);
-        document.postedNotesOneOffEventFlags[propertyName] = true;
+        document.postedNotes.OneOffEventFlags[propertyName] = true;
     }
 
     var numberAreaSelector  = "#char-count-number-"+ magicWord;
@@ -203,11 +203,15 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
+    document.postedNotes = {};
     //declare things for analytics
-    document.postedNotesOneOffEventFlags = new Object();
-    document.postedNotesOneOffEventFlags.hasScrolled = false;
-    document.postedNotesOneOffEventFlags.haswrittenSome_message = false;
-    document.postedNotesOneOffEventFlags.haswrittenSome_address = false;
+    document.postedNotes.OneOffEventFlags = new Object();
+    document.postedNotes.OneOffEventFlags.hasScrolled = false;
+    document.postedNotes.OneOffEventFlags.haswrittenSome_message = false;
+    document.postedNotes.OneOffEventFlags.haswrittenSome_address = false;
+
+    document.postedNotes.pentype = "black fountain pen";
+
 
     //fix the border of the blue section - this makes me sad
     fixBorder();
@@ -220,6 +224,11 @@ $(document).ready(function() {
 
     $("#realButton").click(processInputs);
 
+    $(".writing-implement").click(function(){
+        $(".writing-implement").removeClass( "active" );
+        $( this ).addClass( "active" );
+        $(".pen-type").html( $(this).data('pen'));
+    });
 
     $(".example-letter").click(function(){$(".example-letter-box").toggleClass("letter-box-open");});
     // $('.example-letter').attr('src', 'img/example-letter.jpg');
@@ -267,16 +276,16 @@ $(document).ready(function() {
         //captures if the user scrolls first or clicks the 'start writing now' button first
         //as that button triggers a scroll there will be a pair of events click, then scroll.
         //is they scroll first it'll be scroll, do other things.
-        if(document.postedNotesOneOffEventFlags.hasScrolled==false){
+        if(document.postedNotes.OneOffEventFlags.hasScrolled==false){
             console.log("did a scrolly");
             ga('send', 'event', 'scrolled');
-            document.postedNotesOneOffEventFlags.hasScrolled = true;
+            document.postedNotes.OneOffEventFlags.hasScrolled = true;
         }
     });
 
     $(window).bind("beforeunload", function() {
         //I have no idea if this is working!
-        ga('send', 'event', 'close', JSON.stringify(document.postedNotesOneOffEventFlags));
+        ga('send', 'event', 'close', JSON.stringify(document.postedNotes.OneOffEventFlags));
     });
 
     $(document).focus();
