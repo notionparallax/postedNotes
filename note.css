@@ -541,6 +541,13 @@ ul.nav-menu {
   /*media query targeting xs*/
   /*specifically targeting iphone 4*/ }
 @media all and (max-width: 768px) and (max-height: 900px) and (min-height: 481px) {
+  html, body {
+    overflow-x: hidden; }
+
+  .container {
+    padding-left: 2em;
+    padding-right: 1em; }
+
   .jumbotron {
     font-size: 40% !important; }
 
