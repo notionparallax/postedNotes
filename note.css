@@ -55,7 +55,7 @@ p {
   height: 8em; }
 
 svg .pigeon {
-  fill: #de1e26; }
+  fill: white; }
 
 .caption {
   background-color: rgba(255, 255, 255, 0.95);
@@ -87,6 +87,85 @@ svg .pigeon {
 /*writing section*/
 .char-count {
   margin-left: 0.3em; }
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden; }
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.svg-clipper {
+  display: inline-block;
+  height: 4em;
+  overflow: hidden; }
+
+.writing-implement {
+  width: 2em;
+  margin: 0.3em; }
+
+g.colour {
+  opacity: 0.04; }
+
+g.outline {
+  display: none; }
+
+div.svg-clipper > div:nth-child(2) > svg > g.ball > g.colour.active {
+  display: inline; }
+
+.pen {
+  margin-left: 3em;
+  margin-top: 2em; }
+  .pen p {
+    font-size: 100%; }
+
+.svg-clipper {
+  margin-left: 3em; }
+
+div.svg-clipper > div:nth-child(1) > svg > g.ball, div.svg-clipper > div:nth-child(1) > svg > g.pencil {
+  display: none; }
+div.svg-clipper > div:nth-child(1) > svg g.lines path, div.svg-clipper > div:nth-child(1) > svg g.lines polygon, div.svg-clipper > div:nth-child(1) > svg g.lines polyline {
+  stroke: black; }
+div.svg-clipper > div:nth-child(1) > svg:hover g.lines path, div.svg-clipper > div:nth-child(1) > svg:hover g.lines polygon, div.svg-clipper > div:nth-child(1) > svg:hover g.lines polyline {
+  stroke-width: 7; }
+
+div.svg-clipper > div:nth-child(2) > svg > g.ball, div.svg-clipper > div:nth-child(2) > svg > g.pencil {
+  display: none; }
+div.svg-clipper > div:nth-child(2) > svg g.lines path, div.svg-clipper > div:nth-child(2) > svg g.lines polygon, div.svg-clipper > div:nth-child(2) > svg g.lines polyline {
+  stroke: blue; }
+div.svg-clipper > div:nth-child(2) > svg:hover g.lines path, div.svg-clipper > div:nth-child(2) > svg:hover g.lines polygon, div.svg-clipper > div:nth-child(2) > svg:hover g.lines polyline {
+  stroke-width: 7; }
+
+div.svg-clipper > div:nth-child(3) > svg > g.fountain, div.svg-clipper > div:nth-child(3) > svg > g.pencil {
+  display: none; }
+div.svg-clipper > div:nth-child(3) > svg g.lines path, div.svg-clipper > div:nth-child(3) > svg g.lines polygon, div.svg-clipper > div:nth-child(3) > svg g.lines polyline {
+  stroke: black; }
+div.svg-clipper > div:nth-child(3) > svg:hover g.lines path, div.svg-clipper > div:nth-child(3) > svg:hover g.lines polygon, div.svg-clipper > div:nth-child(3) > svg:hover g.lines polyline {
+  stroke-width: 7; }
+
+div.svg-clipper > div:nth-child(4) > svg > g.fountain, div.svg-clipper > div:nth-child(4) > svg > g.pencil {
+  display: none; }
+div.svg-clipper > div:nth-child(4) > svg g.lines path, div.svg-clipper > div:nth-child(4) > svg g.lines polygon, div.svg-clipper > div:nth-child(4) > svg g.lines polyline {
+  stroke: blue; }
+div.svg-clipper > div:nth-child(4) > svg:hover g.lines path, div.svg-clipper > div:nth-child(4) > svg:hover g.lines polygon, div.svg-clipper > div:nth-child(4) > svg:hover g.lines polyline {
+  stroke-width: 7; }
+
+div.svg-clipper > div:nth-child(5) > svg > g.fountain, div.svg-clipper > div:nth-child(5) > svg > g.ball {
+  display: none; }
+div.svg-clipper > div:nth-child(5) > svg g.lines path, div.svg-clipper > div:nth-child(5) > svg g.lines polygon, div.svg-clipper > div:nth-child(5) > svg g.lines polyline {
+  stroke: darkgray; }
+div.svg-clipper > div:nth-child(5) > svg:hover g.lines path, div.svg-clipper > div:nth-child(5) > svg:hover g.lines polygon, div.svg-clipper > div:nth-child(5) > svg:hover g.lines polyline {
+  stroke-width: 7; }
+
+.writing-implement.active .colour {
+  opacity: 1; }
 
 .card-holder, .envelope-holder {
   padding: 0; }
@@ -189,6 +268,12 @@ textarea {
   padding-bottom: 4em;
   position: relative; }
 
+.panel-title a {
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-size: 130%; }
+
 .pro-tips {
   position: absolute;
   top: 0;
@@ -264,6 +349,10 @@ textarea {
 .footer-row {
   font-size: 62.5%;
   padding-bottom: 4em; }
+
+.social-icon {
+  height: 5em;
+  width: 5em; }
 
 .airmail-stripe {
   margin-top: 3em;
