@@ -55,7 +55,7 @@ p {
     height:8em;
 }
 svg .pigeon {
-    fill:rgba(222, 30, 38, 1);
+    fill:white;
 }
 .caption {
     background-color: rgba(255,255,255,0.95);
@@ -194,7 +194,6 @@ textarea {
     padding-bottom: 4em;
     position: relative;
 }
-.pro-tip-row{padding-top: 4em;}
 .panel-title a {
     display: block;
     width: 100%;
@@ -286,6 +285,10 @@ textarea {
 .footer-row{
     font-size: 62.5%;
     padding-bottom: 4em;
+}
+.social-icon{
+    height:5em;
+    width: 5em;
 }
 .airmail-stripe {
     margin-top: 3em;
