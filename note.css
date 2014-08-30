@@ -2,13 +2,8 @@
 @-ms-viewport {
   /*this supposedly fixes it for win mob 8*/
   width: device-width; }
-.needs-a-rewrite {
-  /*this is applied to paragraphs
-  that need to be rewritten*/
-  color: #b57808;
-  border: 1px solid red;
-  border-top: none;
-  border-bottom: none; }
+* {
+  box-sizing: border-box; }
 
 /*everywhere stuff*/
 body {
@@ -28,14 +23,33 @@ p {
   orphans: 2;
   widows: 2; }
 
-/*above fold stuff*/
-.jumbotron.container {
-  padding: 0;
-  margin: 0; }
+.svg-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden; }
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.btn-ghost {
+  transition: background-color 0.5s ease, color 0.5s ease;
+  color: #de1e26;
+  border-color: #de1e26;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1em; }
 
 .jumbotron {
   height: 92.5%;
   position: relative; }
+  .jumbotron .container {
+    padding: 0;
+    margin: 0; }
 
 .header-page {
   color: #de1e26;
@@ -52,9 +66,6 @@ p {
 
 .logo-bird {
   height: 8em; }
-
-svg .pigeon {
-  fill: white; }
 
 .caption {
   background-color: rgba(255, 255, 255, 0.95);
@@ -76,29 +87,11 @@ svg .pigeon {
   margin-left: 1em;
   margin-right: 1em; }
 
-.bb {
+.button-box {
   width: 100%;
   height: inherit;
   position: absolute;
   bottom: 2em;
-  left: 0; }
-
-/*writing section*/
-.char-count {
-  margin-left: 0.3em; }
-
-.svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%;
-  vertical-align: middle;
-  overflow: hidden; }
-
-.svg-content {
-  display: inline-block;
-  position: absolute;
-  top: 0;
   left: 0; }
 
 .svg-clipper {
@@ -115,9 +108,6 @@ g.colour {
 
 g.outline {
   display: none; }
-
-div.svg-clipper > div:nth-child(2) > svg > g.ball > g.colour.active {
-  display: inline; }
 
 .pen {
   margin-left: 3em;
@@ -196,6 +186,16 @@ div.svg-clipper > div:nth-child(5) > svg:hover g.lines path, div.svg-clipper > d
 .textarea-error {
   border: 2px solid red; }
 
+.t-and-c {
+  margin-top: 2em;
+  margin-bottom: 2em; }
+
+.t-and-c-error {
+  display: none;
+  padding-left: 11em;
+  color: red;
+  width: 60%; }
+
 .card-error-message, .envelope-error-message {
   position: absolute;
   top: 50%;
@@ -217,9 +217,8 @@ div.svg-clipper > div:nth-child(5) > svg:hover g.lines path, div.svg-clipper > d
   padding: 0.5em;
   margin-bottom: 4em; }
   .stamp svg {
-    height: 100%;
-    margin-left: 20%; }
-    .stamp svg #pigeon {
+    height: 100%; }
+    .stamp svg .pigeon {
       fill: white; }
 
 textarea {
@@ -232,8 +231,30 @@ textarea {
   padding-left: 20%;
   padding-right: 15%; }
 
-.invisible-bit {
-  display: none; }
+.char-count {
+  margin-left: 0.3em; }
+
+.numbered-illustration {
+  position: relative;
+  margin-bottom: 1em; }
+
+.illustration {
+  width: 100%; }
+
+.number {
+  position: absolute;
+  left: 7%;
+  top: 7%;
+  width: 2em;
+  padding: 0.3em;
+  border-radius: 50%;
+  background-color: #de1e26;
+  font-size: 2em;
+  color: white;
+  text-align: center; }
+
+.ball-icon {
+  width: 100%; }
 
 .example-letter-box {
   position: relative;
@@ -263,6 +284,9 @@ textarea {
   .letter-box-open:before {
     content: ''; }
 
+.invisible-bit {
+  display: none; }
+
 .note-row {
   padding-bottom: 4em;
   position: relative; }
@@ -272,55 +296,6 @@ textarea {
   width: 100%;
   text-align: right;
   font-size: 130%; }
-
-.pro-tips {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-top: 4em;
-  height: 3em;
-  width: 11em;
-  /*border: 1px solid black;*/
-  overflow: hidden;
-  padding: 1em;
-  background-color: white;
-  z-index: 5000;
-  border-radius: 1.4em;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
-  transition: width 0.3s ease , height 0.3s ease , -webkit-box-shadow 0.3s ease , -moz-box-shadow 0.3s ease , box-shadow 0.3s ease , border-radius 0.3s ease; }
-  .pro-tips h3 {
-    margin-top: -0.5em;
-    text-align: right; }
-
-.pro-tips-active {
-  height: inherit;
-  width: 36%;
-  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-  border-radius: 0; }
-
-/*explanation section*/
-.numbered-illustration {
-  position: relative;
-  margin-bottom: 1em; }
-
-.illustration {
-  width: 100%; }
-
-.number {
-  position: absolute;
-  left: 7%;
-  top: 7%;
-  width: 2em;
-  padding: 0.3em;
-  border-radius: 50%;
-  background-color: #de1e26;
-  font-size: 2em;
-  color: white;
-  text-align: center; }
 
 .what-row {
   padding-bottom: 4em; }
@@ -342,77 +317,6 @@ textarea {
   padding-top: 4em; }
 
 .map {
-  width: 100%; }
-
-/*footer*/
-.footer-row {
-  font-size: 62.5%;
-  padding-bottom: 4em; }
-
-.social-icon {
-  height: 5em;
-  width: 5em; }
-
-.airmail-stripe {
-  margin-top: 3em;
-  margin-bottom: 3em;
-  height: 2em;
-  border-radius: 1em;
-  background-color: #3e479d;
-  background: repeating-linear-gradient(117deg, #3e479d 0px, #3e479d 30px, transparent 30px, transparent 60px, #de1e26 60px, #de1e26 90px, transparent 90px, transparent 120px); }
-
-.email-form {
-  padding: 0.5;
-  margin-bottom: 1em; }
-
-ul.nav-menu {
-  float: right; }
-  ul.nav-menu li {
-    display: inline-block;
-    padding-left: 3em; }
-
-.btn-ghost {
-  transition: background-color 0.5s ease, color 0.5s ease;
-  color: #de1e26;
-  border-color: #de1e26;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 1em; }
-
-.t-and-c {
-  margin-top: 2em;
-  margin-bottom: 2em; }
-
-.t-and-c-error {
-  display: none;
-  padding-left: 11em;
-  color: red;
-  width: 60%; }
-
-#realButton {
-  padding-bottom: 1em;
-  padding-top: 0px; }
-
-.paypal-logo {
-  /*Paypal logo comes from:
-  http://htmlpreview.github.io/?https://gist.githubusercontent.com/jomo/141e186af45fa1f803af/raw/c7dcd85978f443c2cfb42305bb568dea6c87f6ed/paypal.svg*/
-  height: 2em;
-  width: 2em;
-  -webkit-transform: translateY(0.9em);
-  -moz-transform: translateY(0.9em); }
-
-.button-bar {
-  margin-top: 4em;
-  width: 100%; }
-
-.us {
-  width: 100%;
-  height: 10em;
-  background-image: url(https://scontent-b-hkg.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10387492_798119716721_3637458185492150532_n.jpg);
-  background-position: 50% 60%;
-  background-size: 138%;
-  border-radius: 5em; }
-
-.ball-icon {
   width: 100%; }
 
 .paypal-wait-box {
@@ -446,6 +350,50 @@ ul.nav-menu {
     -webkit-transform: rotate(359deg); } }
 .paypal-wait-words {
   white-space: normal; }
+
+.button-bar {
+  margin-top: 4em;
+  width: 100%; }
+
+.paypal-logo {
+  /*Paypal logo comes from:
+  http://htmlpreview.github.io/?https://gist.githubusercontent.com/jomo/141e186af45fa1f803af/raw/c7dcd85978f443c2cfb42305bb568dea6c87f6ed/paypal.svg*/
+  height: 2em;
+  width: 2em;
+  -webkit-transform: translateY(0.9em);
+  -moz-transform: translateY(0.9em); }
+
+#realButton {
+  padding-bottom: 1em;
+  padding-top: 0px; }
+
+.us {
+  width: 100%;
+  height: 10em;
+  background-image: url(https://scontent-b-hkg.xx.fbcdn.net/hphotos-xpf1/t1.0-9/10387492_798119716721_3637458185492150532_n.jpg);
+  background-position: 50% 60%;
+  background-size: 138%;
+  border-radius: 5em; }
+
+.email-form {
+  padding: 0.5;
+  margin-bottom: 1em; }
+
+.footer-row {
+  font-size: 62.5%;
+  padding-bottom: 4em; }
+
+.social-icon {
+  height: 5em;
+  width: 5em; }
+
+.airmail-stripe {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  height: 2em;
+  border-radius: 1em;
+  background-color: #3e479d;
+  background: repeating-linear-gradient(117deg, #3e479d 0px, #3e479d 30px, transparent 30px, transparent 60px, #de1e26 60px, #de1e26 90px, transparent 90px, transparent 120px); }
 
 /*media query targeting xs*/
 @media all and (max-width: 768px) {
