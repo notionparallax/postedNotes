@@ -1,0 +1,59 @@
+.btn-ghost {
+    transition: background-color 0.5s ease,
+                color 0.5s ease;
+    color:rgba(222, 30, 38, 1);
+    border-color:rgba(222, 30, 38, 1);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+}
+.jumbotron {
+    height:92.5%;
+    position: relative;
+    .container{
+        padding: 0;
+        margin: 0;
+    }
+}
+.header-page {
+    color: rgba(222, 30, 38, 1);
+    /*etching dude*/
+    background-image: url('img/writing-a-letter.gif');
+    /*painting dude*/
+    /*background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG');*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.logo-bird {
+    height:8em;
+}
+.caption {
+    background-color: rgba(255,255,255,0.95);
+    /*margin-left:  20%;*/
+    /*margin-right: 20%;*/
+    padding: 1em;
+    padding-top: 0.2em;
+}
+.page-info {
+    height: 5em;
+}
+.down-arrow {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+}
+.btn .button-text {
+    display: inline;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.button-box{
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    bottom: 2em;
+    left: 0;
+}

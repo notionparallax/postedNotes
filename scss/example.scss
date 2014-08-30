@@ -1,0 +1,28 @@
+.example-letter-box {
+    position: relative;
+    height:12em;
+    overflow: hidden;
+    text-align: center;
+    transition: height 0.7s ease;
+}
+.example-letter-box:before {
+        content:'Click to see the whole letter';
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        border-top:1px solid silver;
+        border-bottom:1px solid silver;
+        pointer-events: none;
+}​
+.example-letter{
+    width: 70%;
+}
+.letter-box-open{
+    height:inherit;
+    &:before {
+        content:'';
+    }
+}
