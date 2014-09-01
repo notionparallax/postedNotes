@@ -1,4 +1,5 @@
 var fixBorder = function() {
+    //this is almost certainly a sign that I've cocked something up.
     var pushBy = ($("body").width() - $(".where-row").width()) / 2;
     $(".where-row").css("margin-left", -pushBy);
     $(".where-row").css("margin-right", -pushBy);
@@ -16,10 +17,10 @@ var processInputs = function() {
     var tidyMessage = $("#messageBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
     var tidyAddress = $("#addressBox").val().replace(/(\r\n|\n|\r)/gm, "~|");
 
-    var messageChunks1 = tidyMessage.slice(0  , 200);
-    var messageChunks2 = tidyMessage.slice(200, 400);
-    var messageChunks3 = tidyMessage.slice(400, 600);
-    var messageChunks4 = tidyMessage.slice(600, 800);
+    var messageChunks1 = "`"+tidyMessage.slice(  0, 198)+"`";
+    var messageChunks2 = "`"+tidyMessage.slice(198, 396)+"`";
+    var messageChunks3 = "`"+tidyMessage.slice(396, 594)+"`";
+    var messageChunks4 = "`"+tidyMessage.slice(594, 792)+"`";
 
     var addressChunks1 = tidyAddress.slice(0  , 200);
     var addressChunks2 = tidyAddress.slice(200, 400);
@@ -179,7 +180,7 @@ var doThisOnKeyup = function(event) {
     }
 
     var numberAreaSelector  = "#char-count-number-"+ magicWord;
-    var messageAreaSelector = "#char-count-" + magicWord
+    var messageAreaSelector = "#char-count-"       + magicWord
     if (count < warnChars) {
         $(numberAreaSelector ).html("<span class='text-success'>" + count + "</span>");
         $(messageAreaSelector).html("<span class='glyphicon glyphicon-thumbs-up'></span>");
@@ -217,7 +218,7 @@ $(document).ready(function() {
     fixBorder();
 
     //register events
-    $('#messageBox').keyup({selector: '#messageBox', magicWord: 'message', warnChars: 500, maxChars: 800}, doThisOnKeyup );
+    $('#messageBox').keyup({selector: '#messageBox', magicWord: 'message', warnChars: 500, maxChars: 789}, doThisOnKeyup );
     $('#addressBox').keyup({selector: '#addressBox', magicWord: 'address', warnChars: 250, maxChars: 400}, doThisOnKeyup );
 
     $("input[type='checkbox']").click(clearErrorMessages);
