@@ -21,7 +21,7 @@ var translate = function(){
 	//console.log(address);
 
 	//console.log(meta);
-	var goahead = meta[1] === "agreed:true";
+	var goahead = meta[1] === "agreed:true" ? "Yes" : "No - get in touch with Ben and He'll sort it out.";
 	//console.log(goahead);
 
 	var penType = meta[2].split(":")[1];
