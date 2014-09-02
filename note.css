@@ -454,6 +454,9 @@ textarea {
   .button-bar {
     margin-top: 0em; }
 
+  .button-box {
+    bottom: -3em; }
+
   .card-error-message {
     top: 35%;
     width: 75%;
@@ -499,6 +502,8 @@ textarea {
 
   .jumbotron {
     font-size: 40% !important; }
+    .jumbotron p {
+      font-size: 16px; }
 
   .btn h3 {
     font-size: 1em; }
