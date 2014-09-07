@@ -396,6 +396,10 @@ textarea {
   background-color: #3e479d;
   background: repeating-linear-gradient(117deg, #3e479d 0px, #3e479d 30px, transparent 30px, transparent 60px, #de1e26 60px, #de1e26 90px, transparent 90px, transparent 120px); }
 
+.email-form label {
+  display: block;
+  color: transparent; }
+
 /*media query targeting xs*/
 @media all and (max-width: 768px) {
   .what-row-text {

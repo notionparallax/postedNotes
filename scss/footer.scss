@@ -26,3 +26,8 @@
     background-color: rgba(62, 71, 157, 1);
     background: repeating-linear-gradient(117deg, rgba(62, 71, 157, 1) 0px, rgba(62, 71, 157, 1) 30px, transparent 30px, transparent 60px, rgba(222, 30, 38, 1) 60px, rgba(222, 30, 38, 1) 90px, transparent 90px, transparent 120px);
 }
+.email-form label {
+    //this is a terribel hack to get the accessibility rating up
+    display: block;
+    color: rgba(0,0,0,0);
+}
