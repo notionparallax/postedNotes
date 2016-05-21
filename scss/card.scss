@@ -1,83 +1,100 @@
-.card-holder,.envelope-holder{
-    padding: 0;
+$error-colour: red;
+
+.card-holder,
+.envelope-holder {
+  padding: 0;
 }
-.card, .envelope{
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.card {
-    height:44em;
-    padding: 2em;
-    -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-}
-.card-holder{
-    z-index: 7000;
-}
+
+.card, 
 .envelope {
-    margin-top: 4em;
-    padding-top: 4em;
-    padding-right: 4em;
-    height: 30em;
-    padding-bottom: 12em;
-    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.textarea-error{
-    border:2px solid red;
-}
-.t-and-c{
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-.t-and-c-error {
-    display: none;
-    padding-left: 11em;
-    color: red;
-    width: 60%;
-}
-.card-error-message, .envelope-error-message{
-        position: absolute;
-        top: 50%;
-        text-align: center;
-        font-size: 1.5em;
-        color: red;
-        /* border: 1px solid; */
-        width: 85%;
-        visibility: hidden;
 
-        display: none;
-    }
-.envelope-error-message{
-    top:64%;
+.card {
+  height:44em;
+  padding: 2em;
+  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
 }
-.stamp {
-    background-color: rgba(222, 30, 38, 1);
-    width: 8em;
-    height: 5em;
-    padding: 0.5em;
-    margin-bottom: 4em;
 
-    svg {
-        height: 100%;
-        .pigeon {
-            fill:white;
-        }
-    }
+.card-holder {
+  z-index: 7000;
 }
-textarea {
-    border:none;
-    width: 100%;
-    height: 100%;
-    padding:1em;
-}
-.envelope textarea {
+
+.envelope {
+  margin-top: 4em;
+  padding-top: 4em;
+  padding-right: 4em;
+  height: 30em;
+  padding-bottom: 12em;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+
+  textarea {
     padding-left: 20%;
     padding-right: 15%;
+  }
 }
 
-.char-count{
-    margin-left: 0.3em;
+.textarea-error {
+  border:2px solid $error-colour;
+}
+
+.t-and-c {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.t-and-c-error {
+  display: none;
+  padding-left: 11em;
+  color: $error-colour;
+  width: 60%;
+}
+
+.card-error-message, .envelope-error-message {
+    /* border: 1px solid; */
+    color: $error-colour;
+    display: none;
+    font-size: 1.5em;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    visibility: hidden;
+    width: 85%;
+  }
+
+.envelope-error-message {
+  top:64%;
+}
+
+.stamp {
+  background-color: rgba(222, 30, 38, 1);
+  width: 8em;
+  height: 5em;
+  padding: 0.5em;
+  margin-bottom: 4em;
+
+  svg {
+    height: 100%;
+    .pigeon {
+      fill:white;
+    }
+
+  }
+
+}
+
+textarea {
+  border:none;
+  width: 100%;
+  height: 100%;
+  padding:1em;
+}
+
+.char-count {
+  margin-left: 0.3em;
 }

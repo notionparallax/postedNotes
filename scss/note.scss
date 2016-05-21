@@ -1,40 +1,54 @@
-@charset"utf-8";
-@-ms-viewport {/*this supposedly fixes it for win mob 8*/
+@charset "utf-8";
+
+@-ms-viewport {//this supposedly fixes it for win mob 8
   width: device-width;
 }
-* { box-sizing: border-box }
-/*everywhere stuff*/
+
+* { box-sizing: border-box; }
+
+//everywhere stuff
 body {
-    background: rgba(62, 71, 157, 0.05);
-    font-family: "Roboto Slab";
-    font-weight: 300;
+  background: rgba(62, 71, 157, 0.05);
+  font-family: "Roboto Slab";
+  font-weight: 300;
 }
-h1,h2,h3,h4,h5{
-    font-weight: 400;
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
 }
-html, body {
-    height:100%;
-    width:100%;
+
+html, 
+body {
+  height:100%;
+  width:100%;
 }
+
 p {
-    font-size: 133.3333333%;
-    orphans: 2;
-    widows: 2;
+  font-size: 133.3333333%;
+  orphans: 2;
+  widows: 2;
 }
+
 .svg-container {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    vertical-align: middle;
-    overflow: hidden;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
 }
+
 .svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
 
 @import 'header';
 // svg pens stuff
@@ -45,31 +59,34 @@ p {
 @import 'example';
 
 .invisible-bit {
-    display: none;
+  display: none;
 }
 
+
 .note-row {
-    padding-bottom: 4em;
-    position: relative;
+  padding-bottom: 4em;
+  position: relative;
 }
+
 .panel-title a {
-    display: block;
-    width: 100%;
-    text-align: right;
-    font-size: 130%;
+  display: block;
+  font-size: 130%;
+  text-align: right;
+  width: 100%;
 }
+
 .what-row {
-    padding-bottom: 4em;
+  padding-bottom: 4em;
 }
+
 .what-row-text {
-    -webkit-column-count:3;
-       -moz-column-count:3;
-         -o-column-count:3;
-            column-count:3;
+  column-count:3;
 }
+
 .how-row {
-    padding-bottom: 4em;
+  padding-bottom: 4em;
 }
+
 @import 'where-row';
 
 
@@ -79,7 +96,9 @@ p {
 //         display: inline-block;
 //         padding-left: 3em;
 //     }
+
 // }
+
 
 @import 'paypal-button';
 
