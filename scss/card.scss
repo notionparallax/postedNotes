@@ -1,22 +1,18 @@
-$error-colour: red;
-
 .card-holder,
 .envelope-holder {
   padding: 0;
 }
 
-.card, 
+.card,
 .envelope {
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $paper-colour;
+  border: 1px solid $shadow-colour;
 }
 
 .card {
-  height:44em;
+  box-shadow: 10px 10px 20px 0px $shadow-colour;
+  height: 44em;
   padding: 2em;
-  -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
 .card-holder {
@@ -24,14 +20,12 @@ $error-colour: red;
 }
 
 .envelope {
-  margin-top: 4em;
-  padding-top: 4em;
-  padding-right: 4em;
+  box-shadow: 5px 5px 10px 0px $shadow-colour;
   height: 30em;
+  margin-top: 4em;
   padding-bottom: 12em;
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.4);
+  padding-right: 4em;
+  padding-top: 4em;
 
   textarea {
     padding-left: 20%;
@@ -40,61 +34,62 @@ $error-colour: red;
 }
 
 .textarea-error {
-  border:2px solid $error-colour;
+  border: 2px solid $error-colour;
 }
 
 .t-and-c {
-  margin-top: 2em;
   margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .t-and-c-error {
-  display: none;
-  padding-left: 11em;
   color: $error-colour;
+  display: 0;
+  padding-left: 11em;
   width: 60%;
 }
 
-.card-error-message, .envelope-error-message {
-    /* border: 1px solid; */
-    color: $error-colour;
-    display: none;
-    font-size: 1.5em;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    visibility: hidden;
-    width: 85%;
-  }
+.card-error-message, 
+.envelope-error-message {
+  //border: 1px solid;
+  color: $error-colour;
+  display: none;
+  font-size: 1.5em;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  visibility: hidden;
+  width: 85%;
+}
 
 .envelope-error-message {
-  top:64%;
+  top: 64%;
 }
 
 .stamp {
-  background-color: rgba(222, 30, 38, 1);
-  width: 8em;
+  background-color: $stamp-colour;
   height: 5em;
-  padding: 0.5em;
   margin-bottom: 4em;
+  padding: 0.5em;
+  width: 8em;
 
   svg {
     height: 100%;
-    .pigeon {
-      fill:white;
-    }
 
+    .pigeon {
+      fill: $paper-colour;
+    }
   }
 
 }
 
 textarea {
-  border:none;
-  width: 100%;
+  border: 0;
   height: 100%;
-  padding:1em;
+  padding: 1em;
+  width: 100%;
 }
 
 .char-count {
-  margin-left: 0.3em;
+  margin-left: .3em;
 }

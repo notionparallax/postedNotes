@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+//colour variables
+$error-colour: red;
+$paper-colour: white;
+$shadow-colour: rgba(0, 0, 0, 0.3);
+$stamp-colour: rgba(222, 30, 38, 1);
+$border-colour: silver;
+
 @-ms-viewport {//this supposedly fixes it for win mob 8
   width: device-width;
 }

@@ -1,22 +1,22 @@
 .example-letter-box {
-  position: relative;
-  height:12em;
+  height: 12em;
   overflow: hidden;
+  position: relative;
   text-align: center;
-  transition: height 0.7s ease;
+  transition: height .7s ease;
 }
 
-.example-letter-box:before {
-  border-bottom:1px solid silver;
-  border-top:1px solid silver;
-  content:'Click to see the whole letter';
-  display:block;
-  height:100%;
-  left:0;
+.example-letter-box::before {
+  border-bottom: 1px solid $border-colour;
+  border-top: 1px solid $border-colour;
+  content: 'Click to see the whole letter';
+  display: block;
+  height: 100%;
+  left: 0;
   pointer-events: none;
-  position:absolute;
-  top:0;
-  width:100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }​
 
 .example-letter {
@@ -24,9 +24,9 @@
 }
 
 .letter-box-open {
-  height:inherit;
-  
-  &:before {
-      content:'';
+  height: inherit;
+
+  &::before {
+      content: '';
   }
 }

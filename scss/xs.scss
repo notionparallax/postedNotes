@@ -1,160 +1,151 @@
 //media query targeting xs
 @media all and (max-width: 768px){
   .what-row-text {
-      -webkit-column-count:1;
-         -moz-column-count:1;
-           -o-column-count:1;
-              column-count:1;
+    column-count:1;
   }
 
   textarea {
-      border:none;
-      width: 100%;
-      height: 50%
+    border:none;
+    width: 100%;
+    height: 50%
   }
 
   .example-letter-box {
-      height:inherit;
+    height:inherit;
   }
 
   .example-letter-box:before {
-      content:'';
+    content:'';
   }
-  ​
+
   .row {
-      margin: 0;
+    margin: 0;
   }
 
   .note-row {
-      padding-bottom: 0;
+    padding-bottom: 0;
   }
 
-  .card, .envelope {
-      margin: 2em;
-      padding-top: 1em;
-      height:50%;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;
-      padding-bottom: 2em;
-      position: relative;
+  .card, 
+  .envelope {
+    margin: 2em;
+    padding-top: 1em;
+    height:50%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding-bottom: 2em;
+    position: relative;
   }
 
   .card {
-      padding-left: 2em;
-      padding-right:2em;
+    padding-left: 2em;
+    padding-right:2em;
   }
 
   .envelope {
-      padding-right: 2em;
-      padding-left: 2em;
-      textarea {
-          width: 100%;
-          margin-left: 0;
-          padding-left: 10%;
-          padding-right: 10%;
-      }
+    padding-left: 2em;
+    padding-right: 2em;
+
+    textarea {
+      margin-left: 0;
+      padding-left: 10%;
+      padding-right: 10%;
+      width: 100%;
+    }
 
   }
 
   .stamp {
-      margin-right: 0;
-      width: 4em;
-      height: 3em;
-      margin-bottom: 1em
+    height: 3em;
+    margin-bottom: 1em;
+    margin-right: 0;
+    width: 4em;
   }
 
   .button-bar {
-      margin-top: 0em;
+    margin-top: 0;
   }
 
   .button-box {
-      bottom: -3em;
-      }
+    bottom: -3em;
+  }
 
   .card-error-message {
-      top: 35%;
-      width: 75%;
-      padding-left: 0.5em;
+    padding-left: 0.5em;
+    top: 35%;
+    width: 75%;
   }
 
   .envelope-error-message {
-      top: 50%;
-      width: 70%;
-      padding-left: 2em;
+    padding-left: 2em;
+    top: 50%;
+    width: 70%;
   }
 
-  .t-and-c input[type=checkbox]{
-      margin: 1.5em;
-      -webkit-transform : scale(3);
-      -moz-transform    : scale(3);
-      -o-transform      : scale(3);
-      transform         : scale(3);
+  .t-and-c input[type=checkbox] {
+    margin: 1.5em;
+    transform: scale(3);
   }
 
   input#email-button {
-      height: 6em;/*make the button big enough to touch*/
-      margin-top: 1em;
+    height: 6em;/*make the button big enough to touch*/
+    margin-top: 1em;
   }
 
   .p-and-t p {
-      line-height: 2em;
+    line-height: 2em;
   }
 
   .tc-text {
-      display: inline-block;
-      width: 50%;
-      -webkit-transform: translateY(2em);
-      -moz-transform: translateY(2em);
-      -o-transform: translateY(2em);
-      transform: translateY(2em);
+    display: inline-block;
+    width: 50%;
+    transform: translateY(2em);
   }
 
-  /*media query targeting xs*/
-  /*specifically targeting iphone 4*/
+  //media query targeting xs
+  //specifically targeting iphone 4
   @media all and (max-height: 900px) and (min-height: 481px){
-      html, body {
+    html, 
+    body {
       overflow-x: hidden;
-      }
+    }
 
-      .container {
-          padding-left: 2em;
-          padding-right: 1em;
-      }
+    .container {
+        padding-left: 2em;
+        padding-right: 1em;
+    }
 
-      .jumbotron {
-          font-size: 40% !important;
-          p {
-              font-size: 16px;
-          }
-
+    .jumbotron {
+      font-size: 40% !important;
+      p {
+        font-size: 16px;
       }
+    }
 
-      .btn h3 {
-          font-size: 1em;
-      }
+    .btn h3 {
+        font-size: 1em;
+    }
 
-      div.baller {
-          padding: 0;
-      }
+    div.baller {
+        padding: 0;
+    }
 
-      .where-text {
-          padding-top: 0;
-      }
+    .where-text {
+      padding-top: 0;
+    }
 
   }
 
   @media all and (max-height: 480px){
-      svg.logo-bird {
-          /* the bird seems to be using up too much space on really small screens*/
-          display: none;
-      }
+    svg.logo-bird {
+      /* the bird seems to be using up too much space on really small screens*/
+      display: none;
+    }
 
-      .stamp svg.logo-bird {
-          /*this feels a bit backwards*/
-          display: inherit;
-      }
-
+    .stamp svg.logo-bird {
+      /*this feels a bit backwards*/
+      display: inherit;
+    }
   }
-
 }
