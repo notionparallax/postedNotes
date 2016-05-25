@@ -1,0 +1,39 @@
+.us {
+  background-image: url('/img/us.jpg');
+  background-position: 50% 38%;
+  background-size: 138%;
+  border-radius: 50%;
+  display: inline-block;
+  height: 40em;
+  width: 40em;
+}
+
+.email-form {
+  padding: 0.5;
+  margin-bottom: 1em;
+}
+
+.footer-row {
+  font-size: 62.5%;
+  padding-bottom: 4em;
+}
+
+.social-icon {
+  height:5em;
+  width: 5em;
+}
+
+.airmail-stripe {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  height:2em;
+  border-radius: 1em;
+  background-color: rgba(62, 71, 157, 1);
+  background: repeating-linear-gradient(117deg, rgba(62, 71, 157, 1) 0px, rgba(62, 71, 157, 1) 30px, transparent 30px, transparent 60px, rgba(222, 30, 38, 1) 60px, rgba(222, 30, 38, 1) 90px, transparent 90px, transparent 120px);
+}
+
+.email-form label {
+  //this is a terribel hack to get the accessibility rating up
+  display: block;
+  color: rgba(0,0,0,0);
+}

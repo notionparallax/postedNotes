@@ -1,0 +1,54 @@
+.paypal-wait-box {
+  display: none;
+  font-size: 150%;
+  height: inherit;
+  margin-top: 0;
+  overflow: hidden;
+  visibility: hidden;
+  white-space: normal;
+}
+
+.visible {
+  display: block;
+  visibility: visible;
+}
+
+.paypal-wait-icon {
+  float: left;
+  font-size: 300%;
+  height: 1em;
+  width: 1em;
+  -webkit-animation-name: rotation;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+}
+
+.paypal-wait-words {
+  white-space: normal;
+}
+
+//.send-btn-text {}
+
+.button-bar {
+  margin-top: 4em;
+  width: 100%;
+}
+
+.paypal-logo {
+  //Paypal logo comes from:
+  //http://htmlpreview.github.io/?https://gist.githubusercontent.com/jomo/141e186af45fa1f803af/raw/c7dcd85978f443c2cfb42305bb568dea6c87f6ed/paypal.svg
+  height: 2em;
+  transform: translateY(.9em);
+  width: 2em;
+}
+
+#realButton {
+  padding-bottom: 1em;
+  padding-top: 0;
+}

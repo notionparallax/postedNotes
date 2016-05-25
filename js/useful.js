@@ -1,13 +1,3 @@
-var fixBorder = function() {
-    //this is almost certainly a sign that I've cocked something up.
-    var pushBy = ($("body").width() - $(".where-row").width()) / 2;
-    $(".where-row").css("margin-left", -pushBy);
-    $(".where-row").css("margin-right", -pushBy);
-    $(".where-row").css("padding-left", pushBy);
-    $(".where-row").css("padding-right", pushBy);
-    // console.log([pushBy, pushBy * -1]);
-};
-
 var processInputs = function() {
 
     console.log("processing these inputs");
@@ -197,12 +187,6 @@ var doThisOnKeyup = function(event) {
 };
 
 
-
-$(window).resize(function() {
-    fixBorder();
-    // console.log("resize");
-});
-
 $(document).ready(function() {
     document.postedNotes = {};
     //declare things for analytics
@@ -212,10 +196,6 @@ $(document).ready(function() {
     document.postedNotes.OneOffEventFlags.haswrittenSome_address = false;
 
     document.postedNotes.pentype = "black fountain pen";
-
-
-    //fix the border of the blue section - this makes me sad
-    fixBorder();
 
     //register events
     $('#messageBox').keyup({selector: '#messageBox', magicWord: 'message', warnChars: 500, maxChars: 789}, doThisOnKeyup );

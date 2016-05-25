@@ -1,0 +1,144 @@
+
+<section class="row note-row" id="nr">
+<div class="guts">
+  <!--writing stuff-->
+  <h2 id="note">Your note&hellip;</h2>
+  <div class="panel-group" id="accordion">
+    <div>
+      <div>
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#pro-tips-collapse">
+            Pro Tips <span class="glyphicon glyphicon-question-sign"></span>
+          </a>
+        </h4>
+      </div>
+      <div id="pro-tips-collapse" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p>If you begin a line with a <code>&gt;</code> we'll right align it. This is handy for formatting addresses.</p>
+          <p>If you put a line of text in between angle brackets:
+            <br><code>&gt; your text here &lt;</code>
+            <br>then we'll indent it both sides, and if possible, centre it.</p>
+          <p>If you run your text through the <a tabindex="-1" href="http://www.hemingwayapp.com/">Hemmingway App</a> it almost always comes out better for it!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--letter comes from here: http://www.lettersofnote.com/2010/11/its-true-beauty-however-was-that-it.html-->
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return processInputs();">
+    <div class="row">
+      <div class="card-holder
+                  col-sm-12
+                  col-md-5
+                  col-md-offset-1">
+        <label for="messageBox">Message: </label> <span class="char-count" id="char-count-number-message">0</span>/789 <span id="char-count-message"></span>
+        <div class="card">
+          <textarea name="messageBox" id="messageBox" rows="5" cols="60" maxlength="792" placeholder="Write your letter here..."></textarea>
+          <div class="card-error-message"></div>
+        </div>
+      </div>
+      <div class="envelope-holder
+                              col-sm-12
+                              col-md-5">
+        <label for="addressBox">Address: </label><span class="char-count" id="char-count-number-address">0</span>/400 <span id="char-count-address"></span>
+        <div class="envelope">
+          <div class="stamp pull-right">
+            {% include pigeon.svg %}
+          </div>
+          <textarea name="addressBox" id="addressBox" rows="5" cols="60" maxlength="450" placeholder="Write the address here..."></textarea>
+          <div class="envelope-error-message"></div>
+        </div>
+        <div class="pen">
+          <p>please write my letter with a:</p>
+          <div class="svg-clipper">
+            <div data-pen="black fountain pen" class="svg-container writing-implement active">
+              {% include pen-choice.svg %}
+            </div>
+            <div data-pen="blue fountain pen" class="svg-container writing-implement">
+              {% include pen-choice.svg %}
+            </div>
+            <div data-pen="black ballpoint pen" class="svg-container writing-implement">
+              {% include pen-choice.svg %}
+            </div>
+            <div data-pen="blue ballpoint pen" class="svg-container writing-implement">
+              {% include pen-choice.svg %}
+            </div>
+            <div data-pen="pencil" class="svg-container writing-implement">
+              {% include pen-choice.svg %}
+            </div>
+          </div>
+          <p class="pen-type">black fountain pen</p>
+        </div>
+      </div>
+    </div>
+    <div class="invisible-bit dont-read" aria-hidden="true">
+      <p>This section is supposed to be hidden. If you are getting this then your styling is broken or something is wrong with your screen reader (or my coding). Ignore the next 6 fields.</p>
+      <label for="cmd">invisible input
+        <input type="hidden" name="cmd" value="_s-xclick">
+      </label>
+      <label for="hosted_button_id">invisible input
+        <input type="hidden" name="hosted_button_id" value="BAMLF4YGYUAJ6">
+      </label>
+      <!--allocated to message - 800 chars-->
+      <label for="on0">invisible input
+        <input type="hidden" name="on0" value="message_part_1">
+      </label>
+      <label for="os0">invisible input
+        <input type="text" name="os0" id="m1" maxlength="200">
+      </label>
+      <label for="on1">invisible input
+        <input type="hidden" name="on1" value="message_part_2">
+      </label>
+      <label for="os1">invisible input
+        <input type="text" name="os1" id="m2" maxlength="200">
+      </label>
+      <label for="on3">invisible input
+        <input type="hidden" name="on3" value="message_part_3">
+      </label>
+      <label for="os3">invisible input
+        <input type="text" name="os3" id="m3" maxlength="200">
+      </label>
+      <label for="on4">invisible input
+        <input type="hidden" name="on4" value="message_part_4">
+      </label>
+      <label for="os4">invisible input
+        <input type="text" name="os4" id="m4" maxlength="200">
+      </label>
+      <!--allocated to address 400 chars-->
+      <label for="on5">invisible input
+        <input type="hidden" name="on5" value="address_part_1">
+      </label>
+      <label for="os5">invisible input
+        <input type="text" name="os5" id="a1" maxlength="200">
+      </label>
+      <label for="on6">invisible input
+        <input type="hidden" name="on6" value="address_part_2">
+      </label>
+      <label for="os6">invisible input
+        <input type="text" name="os6" id="a2" maxlength="200">
+      </label>
+    </div>
+    <div class="t-and-c">
+      <label for="agree_t_and_c">Ts &amp; Cs
+        <input type="checkbox" name="agree_t_and_c" id="agree_t_and_c">
+      </label>
+      <span class="tc-text">Tick to say that you <a href="#rules">agree to 'the rules' below</a>.</span>
+      <span class='t-and-c-error'></span>
+    </div>
+    <div class="button-bar">
+      <!-- ripped from button for validator reasons -->
+      <!-- src="https://www.paypalobjects.com/en_AU/i/btn/btn_paynow_SM.gif"
+                   border="0"
+                   type="image"
+                   alt="PayPal — The safer, easier way to pay online."-->
+      <button class="btn btn-primary btn-lg col-xs-12 col-md-3 col-md-offset-3" name="submit" id="realButton">
+        <span class="send-btn-text">Send and pay</span> {% include paypal-logo.svg %}
+      </button>
+      <div class="paypal-wait-box alert
+                              alert-success col-xs-12 col-md-4 col-md-offset-1">
+        <span class="glyphicon glyphicon-cog paypal-wait-icon"></span>
+        <span class="paypal-wait-words">Hold on a tick, PayPal will take it from here.</span>
+      </div>
+    </div>
+  </form>
+  </div>
+</section>
