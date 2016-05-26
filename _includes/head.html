@@ -16,40 +16,9 @@
     <!-- Posted notes specific -->
     <script async defer src="js/header.js"></script>
     
-    <link async defer type="text/css" rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    <link async defer type="text/css" rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
     
-    <!-- FB snippet stuff -->
-    <meta property="og:title" content="PostedNot.es" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://postednot.es/img/write-a-note.png" />
-    <meta property="og:url" content="https://postednot.es" />
-    <meta property="og:description" content="A handwritten letter is a beautiful thing, which we don't see much anymore. PostedNot.es lets you type a message and we'll write it out and post it for you." />
-
-    <!-- Google+ snippets -->
-    <meta itemprop="name" content="PostedNot.es">
-    <meta itemprop="description" content="A handwritten letter is a beautiful thing, which we don&#39;t see much anymore. PostedNot.es lets you type a message and we&#39;ll write it out and post it for you.">
-    <meta itemprop="image" content="https://postednot.es/img/write-a-note.png">
-
-    <meta name="google-site-verification" content="bYpQZQy2z7eaXk9vCerlL68pUMypqSco-A_Gm9UnP9o" />
-    
-    
-    <!-- Facebook Conversion Code for PNcheckout -->
-    <script>(function() {
-      var _fbq = window._fbq || (window._fbq = []);
-      if (!_fbq.loaded) {
-        var fbds = document.createElement('script');
-        fbds.async = true;
-        fbds.src = '//connect.facebook.net/en_US/fbds.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(fbds, s);
-        _fbq.loaded = true;
-      }
-    })();
-    window._fbq = window._fbq || [];
-    window._fbq.push(['track', '6018815197344', {'value':'0.00','currency':'AUD'}]);
-    </script>
-    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6018815197344&amp;cd[value]=0.00&amp;cd[currency]=AUD&amp;noscript=1" /></noscript>  
-
+    {% include social-meta.html %}
     {% include favicons.html %}
     {% include register-service-worker.html %}
 </head>
