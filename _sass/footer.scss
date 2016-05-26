@@ -4,15 +4,15 @@
   background-size: 138%;
   border-radius: 50%;
   display: inline-block;
-  height: 40em;
+  height: 20em;
   max-height: 60vw;
   max-width: 60vw;
-  width: 40em;
+  width: 20em;
 }
 
 .email-form {
-  padding: .5;
   margin-bottom: 1em;
+  padding: .5;
 }
 
 .footer-row {
@@ -26,9 +26,9 @@
 }
 
 .airmail-stripe {
-  background-color: $airmail-stripe-blue;
-  border-radius: 1em;
+  background-color: $airmail-stripe-blue; //this is a fallback, it's overwritten by the stripes
   background: repeating-linear-gradient(117deg, $airmail-stripe-blue 0, $airmail-stripe-blue 30px, transparent 30px, transparent 60px, $airmail-stripe-red 60px, $airmail-stripe-red 90px, transparent 90px, transparent 120px);
+  border-radius: 1em;
   height: 2em;
   margin-bottom: 3em;
   margin-top: 3em;

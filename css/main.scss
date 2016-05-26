@@ -13,7 +13,7 @@ $paper-colour: white;
 $shadow-colour: rgba(0, 0, 0, 0.3);
 $stamp-colour: rgba(222, 30, 38, 1);
 $border-colour: silver;
-$airmail-stripe-blue: rgba(62, 71, 157, 1);
+$airmail-stripe-blue: $contrast-bg-colour;
 $airmail-stripe-red:rgba(222, 30, 38, 1);
 
 @-ms-viewport {//this supposedly fixes it for win mob 8
