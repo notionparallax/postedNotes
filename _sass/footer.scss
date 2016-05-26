@@ -5,11 +5,13 @@
   border-radius: 50%;
   display: inline-block;
   height: 40em;
+  max-height: 60vw;
+  max-width: 60vw;
   width: 40em;
 }
 
 .email-form {
-  padding: 0.5;
+  padding: .5;
   margin-bottom: 1em;
 }
 
@@ -25,8 +27,8 @@
 
 .airmail-stripe {
   background-color: $airmail-stripe-blue;
-  background: repeating-linear-gradient(117deg, $airmail-stripe-blue 0, $airmail-stripe-blue 30px, transparent 30px, transparent 60px, $airmail-stripe-red 60px, $airmail-stripe-red 90px, transparent 90px, transparent 120px);
   border-radius: 1em;
+  background: repeating-linear-gradient(117deg, $airmail-stripe-blue 0, $airmail-stripe-blue 30px, transparent 30px, transparent 60px, $airmail-stripe-red 60px, $airmail-stripe-red 90px, transparent 90px, transparent 120px);
   height: 2em;
   margin-bottom: 3em;
   margin-top: 3em;
@@ -34,6 +36,6 @@
 
 .email-form label {
   //this is a terribel hack to get the accessibility rating up
-  display: block;
   color: rgba(0,0,0,0);
+  display: block;
 }

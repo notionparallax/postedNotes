@@ -1,5 +1,5 @@
 .btn-ghost {
-  background-color: rgba($main-bg-colour, .8);
+  background-color: $ghost-bg-colour;
   border-color: $error-colour;
   color: $error-colour;
   padding: 1em;
@@ -20,7 +20,7 @@
 
 .header-page {
   color: $error-colour;
-  background-image: url('img/writing-a-letter.gif');//etching dude
+  background-image: url('/img/writing-a-letter.gif');//etching dude
   //background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG'); //painting dude
   background-position: center center;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
 }
 
 .caption {
-  background-color: rgba($main-bg-colour, .95);
+  background-color: $ghost-bg-colour;
   padding-top: .2em;
   padding: 1em;
 }

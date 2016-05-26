@@ -5,7 +5,8 @@
 @charset 'utf-8';
 
 //colour variables
-$main-bg-colour: rgba(62, 71, 157, .05);
+$main-bg-colour: hsla(228, 33%, 97%, 1);
+$ghost-bg-colour: hsla(228, 33%, 97%, .9);
 $error-colour: rgba(222, 30, 38, 1);
 $paper-colour: white;
 $shadow-colour: rgba(0, 0, 0, 0.3);
