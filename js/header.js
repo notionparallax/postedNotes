@@ -29,6 +29,7 @@ var lolHeader = [
 "real, paying customers!",
 "I plan to write this up as a tutorial soon, but if you don't have the patience",
 "for that (or you just want to say Hi!) then get in touch: ben@notionparallax.co.uk",
+""
 ];
 
 
