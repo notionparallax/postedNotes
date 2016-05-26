@@ -1,11 +1,12 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-//@charset 'utf-8';
+
+@charset 'utf-8';
 
 //colour variables
 $main-bg-colour: rgba(62, 71, 157, .05);
-$error-colour: red;
+$error-colour: rgba(222, 30, 38, 1);
 $paper-colour: white;
 $shadow-colour: rgba(0, 0, 0, 0.3);
 $stamp-colour: rgba(222, 30, 38, 1);
@@ -63,8 +64,8 @@ p {
 }
 
 
-@import 
-        'header',
+@import 'header',
+        'world-map',
         'pen-choice',
         'card',
         'explanation',
