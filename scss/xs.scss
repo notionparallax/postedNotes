@@ -1,21 +1,19 @@
 //media query targeting xs
 @media all and (max-width: 768px){
-  .what-row-text {
-    column-count:1;
-  }
+  //.what-row-text {}
 
   textarea {
-    border:none;
+    border: none;
+    height: 50%;
     width: 100%;
-    height: 50%
   }
 
   .example-letter-box {
-    height:inherit;
+    height: inherit;
   }
 
-  .example-letter-box:before {
-    content:'';
+  .example-letter-box::before {
+    content: '';
   }
 
   .row {
@@ -26,21 +24,19 @@
     padding-bottom: 0;
   }
 
-  .card, 
+  .card,
   .envelope {
-    margin: 2em;
-    padding-top: 1em;
-    height:50%;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
+    height: 50%;
+    margin: 2em;
     padding-bottom: 2em;
+    padding-top: 1em;
     position: relative;
   }
 
   .card {
     padding-left: 2em;
-    padding-right:2em;
+    padding-right: 2em;
   }
 
   .envelope {
@@ -67,12 +63,10 @@
     margin-top: 0;
   }
 
-  .button-box {
-    bottom: -3em;
-  }
+  //.button-box {  }
 
   .card-error-message {
-    padding-left: 0.5em;
+    padding-left: .5em;
     top: 35%;
     width: 75%;
   }
@@ -89,7 +83,7 @@
   }
 
   input#email-button {
-    height: 6em;/*make the button big enough to touch*/
+    height: 6em; //make the button big enough to touch
     margin-top: 1em;
   }
 
@@ -99,36 +93,37 @@
 
   .tc-text {
     display: inline-block;
-    width: 50%;
     transform: translateY(2em);
+    width: 50%;
   }
 
   //media query targeting xs
   //specifically targeting iphone 4
   @media all and (max-height: 900px) and (min-height: 481px){
-    html, 
+    html,
     body {
       overflow-x: hidden;
     }
 
     .container {
-        padding-left: 2em;
-        padding-right: 1em;
+      padding-left: 2em;
+      padding-right: 1em;
     }
 
     .jumbotron {
       font-size: 40% !important;
+
       p {
         font-size: 16px;
       }
     }
 
     .btn h3 {
-        font-size: 1em;
+      font-size: 1em;
     }
 
     div.baller {
-        padding: 0;
+      padding: 0;
     }
 
     .where-text {
@@ -139,12 +134,12 @@
 
   @media all and (max-height: 480px){
     svg.logo-bird {
-      /* the bird seems to be using up too much space on really small screens*/
+      // the bird seems to be using up too much space on really small screens
       display: none;
     }
 
     .stamp svg.logo-bird {
-      /*this feels a bit backwards*/
+      // this feels a bit backwards
       display: inherit;
     }
   }

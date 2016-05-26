@@ -1,14 +1,17 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
+//@charset 'utf-8';
 
 //colour variables
+$main-bg-colour: rgba(62, 71, 157, .05);
 $error-colour: red;
 $paper-colour: white;
 $shadow-colour: rgba(0, 0, 0, 0.3);
 $stamp-colour: rgba(222, 30, 38, 1);
 $border-colour: silver;
+$airmail-stripe-blue: rgba(62, 71, 157, 1);
+$airmail-stripe-red:rgba(222, 30, 38, 1);
 
 @-ms-viewport {//this supposedly fixes it for win mob 8
   width: device-width;
@@ -18,8 +21,8 @@ $border-colour: silver;
 
 //everywhere stuff
 body {
-  background: rgba(62, 71, 157, 0.05);
-  font-family: "Roboto Slab";
+  background: $main-bg-colour;
+  font-family: 'Roboto Slab';
   font-weight: 300;
 }
 
@@ -92,10 +95,6 @@ p {
 
 .what-row {
   padding-bottom: 4em;
-}
-
-.what-row-text {
-  column-count:3;
 }
 
 .how-row {
