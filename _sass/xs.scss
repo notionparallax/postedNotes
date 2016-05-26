@@ -5,8 +5,7 @@
   }
 
   textarea {
-    border: none;
-    height: 50%;
+    border: 0;
     width: 100%;
   }
 
@@ -22,6 +21,10 @@
     margin: 0;
   }
 
+  .guts {
+    padding: 0 1em;
+  }
+
   .note-row {
     padding-bottom: 0;
   }
@@ -29,27 +32,23 @@
   .card,
   .envelope {
     box-shadow: none;
-    height: 50%;
-    margin: 2em;
-    padding-bottom: 2em;
-    padding-top: 1em;
+    margin: 1em;
+    padding: 1em;
     position: relative;
   }
 
   .card {
-    padding-left: 2em;
-    padding-right: 2em;
+    height: 70vh;
   }
 
   .envelope {
-    padding-left: 2em;
-    padding-right: 2em;
+    height: 40vh;
 
     textarea {
+      height: initial;
       margin-left: 0;
       padding-left: 10%;
       padding-right: 10%;
-      width: 100%;
     }
 
   }
@@ -58,7 +57,22 @@
     height: 3em;
     margin-bottom: 1em;
     margin-right: 0;
+    text-align: center;
     width: 4em;
+  }
+
+  .pen {
+    margin-left: 0;
+
+    .svg-clipper {
+      height: 30vw;
+      margin-left: 0;
+    }
+
+    .writing-implement,
+    .svg-content {
+      width: 15vw;
+    }
   }
 
   .button-bar {
@@ -66,7 +80,8 @@
   }
 
   .button-box {
-    bottom: -3em;
+    bottom: 5vh;
+    padding: 0 1em;
   }
 
   .card-error-message {
@@ -92,12 +107,12 @@
   }
 
   .p-and-t p {
-    line-height: 2em;
+    //line-height: 2em;
   }
 
   .tc-text {
     display: inline-block;
-    transform: translateY(2em);
+    transform: translateY(1em);
     width: 50%;
   }
 
@@ -116,6 +131,7 @@
 
     .jumbotron {
       font-size: 40%;
+      height: 70%;
 
       p {
         font-size: 16px;
