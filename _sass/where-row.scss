@@ -1,6 +1,6 @@
 .where-row {
-  color:white;
-  background-color: rgba(62, 71, 157, 1);
+  background-color: $contrast-bg-colour;
+  color: $main-bg-colour;
 }
 
 .where-text {
@@ -8,5 +8,5 @@
 }
 
 .map {
-  width: 100%
+  width: 100%;
 }

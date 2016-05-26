@@ -1,23 +1,23 @@
 .numbered-illustration {
-  position: relative;
   margin-bottom: 1em;
+  position: relative;
 }
 
 .illustration {
-  width:100%;
+  width: 100%;
 }
 
 .number {
-  position: absolute;
+  background-color: $error-colour;
+  border-radius: 50%;
+  color: $main-bg-colour;
+  font-size: 2em;
   left: 7%;
+  padding: .3em;
+  position: absolute;
+  text-align: center;
   top: 7%;
   width: 2em;
-  padding: 0.3em;
-  border-radius: 50%;
-  background-color: rgba(222, 30, 38, 1);
-  font-size: 2em;
-  color: white;
-  text-align: center;
 }
 
 .ball-icon {

@@ -17,7 +17,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-}​
+}
 
 .example-letter {
   width: 70%;
@@ -27,6 +27,6 @@
   height: inherit;
 
   &::before {
-      content: '';
+    content: '';
   }
 }

@@ -14,17 +14,17 @@
 }
 
 .paypal-wait-icon {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-name: rotation;
+  animation-timing-function: linear;
   float: left;
   font-size: 300%;
   height: 1em;
   width: 1em;
-  -webkit-animation-name: rotation;
-  -webkit-animation-duration: 4s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes rotation {
+@keyframes rotation {
   from {-webkit-transform: rotate(0deg);}
     to {-webkit-transform: rotate(359deg);}
 }

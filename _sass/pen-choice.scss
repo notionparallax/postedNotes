@@ -6,8 +6,12 @@
 }
 
 .writing-implement {
-  margin: 0.3em;
+  margin: .3em;
   width: 2em;
+
+  .active .colour {
+    opacity: 1;
+  }
 }
 
 g.colour {
@@ -28,19 +32,25 @@ g.outline {
   margin-top: 2em;
 
   p {
-    font-size:100%;
+    font-size: 100%;
   }
 
 }
 
 
 @mixin stroke-bump($stroke-colour) {
-  g.lines path, g.lines polygon, g.lines polyline {stroke: $stroke-colour;}
+  g.lines path,
+  g.lines polygon,
+  g.lines polyline {
+    stroke: $stroke-colour;
+  }
 
   &:hover {
-      g.lines path, g.lines polygon, g.lines polyline {
-          stroke-width: 7;
-      }
+    g.lines path,
+    g.lines polygon,
+    g.lines polyline {
+      stroke-width: 7;
+    }
 
   }
 
@@ -48,40 +58,40 @@ g.outline {
 
 //fountain black
 div.svg-clipper > div:nth-child(1) > svg {
-  &> g.ball, &> g.pencil { display: none; }
+  &> g.ball,
+  &> g.pencil { display: none; }
 
   @include stroke-bump(black);
 }
 
 //fountain blue
 div.svg-clipper > div:nth-child(2) > svg {
-  &> g.ball, &> g.pencil { display: none; }
+  &> g.ball,
+  &> g.pencil { display: none; }
 
   @include stroke-bump(blue);
 }
 
 //ball pen black
 div.svg-clipper > div:nth-child(3) > svg {
-  &> g.fountain, &> g.pencil { display: none; }
+  &> g.fountain,
+  &> g.pencil { display: none; }
 
   @include stroke-bump(black);
 }
 
 //ball pen blue
 div.svg-clipper > div:nth-child(4) > svg   {
-  &> g.fountain, &> g.pencil { display: none; }
+  &> g.fountain,
+  &> g.pencil { display: none; }
 
   @include stroke-bump(blue);
 }
 
 //pencil
 div.svg-clipper > div:nth-child(5) > svg   {
-  &> g.fountain, &> g.ball { display: none; }
+  &> g.fountain,
+  &> g.ball { display: none; }
 
   @include stroke-bump(darkgrey);
-}
-
-
-.writing-implement.active .colour {
-  opacity: 1;
 }

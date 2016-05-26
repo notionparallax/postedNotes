@@ -10,7 +10,7 @@
 }
 
 .card {
-  box-shadow: 10px 10px 20px 0px $shadow-colour;
+  box-shadow: 10px 10px 20px 0 $shadow-colour;
   height: 44em;
   padding: 2em;
 }
@@ -20,7 +20,7 @@
 }
 
 .envelope {
-  box-shadow: 5px 5px 10px 0px $shadow-colour;
+  box-shadow: 5px 5px 10px 0 $shadow-colour;
   height: 30em;
   margin-top: 4em;
   padding-bottom: 12em;
@@ -49,7 +49,7 @@
   width: 60%;
 }
 
-.card-error-message, 
+.card-error-message,
 .envelope-error-message {
   //border: 1px solid;
   color: $error-colour;
@@ -70,7 +70,7 @@
   background-color: $stamp-colour;
   height: 5em;
   margin-bottom: 4em;
-  padding: 0.5em;
+  padding: .5em;
   width: 8em;
 
   svg {
