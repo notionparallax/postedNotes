@@ -269,5 +269,23 @@ $(document).ready(function() {
         ga('send', 'event', 'close', JSON.stringify(document.postedNotes.OneOffEventFlags));
     });
 
+    window.addEventListener('beforeinstallprompt', function(e) {
+      // beforeinstallprompt Event fired
+      // e.userChoice will return a Promise.
+      // For more details read: http://www.html5rocks.com/en/tutorials/es6/promises/
+      e.userChoice.then(function(choiceResult) {
+
+        console.log(choiceResult.outcome);
+
+        if (choiceResult.outcome == 'dismissed') {
+          console.log('User cancelled home screen install');
+          ga('send', 'event', 'homescreenPrompt', 'cancelled');
+        } else {
+          console.log('User added to home screen');
+          ga('send', 'event', 'homescreenPrompt', 'added');
+        }
+      });
+    });
+
     $(document).focus();
 });
