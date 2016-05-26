@@ -1,16 +1,14 @@
 .btn-ghost {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-color:rgba(222, 30, 38, 1);
-  color:rgba(222, 30, 38, 1);
+  background-color: rgba($main-bg-colour, .8);
+  border-color: $error-colour;
+  color: $error-colour;
   padding: 1em;
-  transition: background-color 0.5s ease,
-              color 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .jumbotron {
   //height:92.5%;
   height: 50%;
-  min-height: 30em;
   position: relative;
 
   .container {
@@ -21,11 +19,9 @@
 }
 
 .header-page {
-  color: rgba(222, 30, 38, 1);
-  /*etching dude*/
-  background-image: url('/img/writing-a-letter.gif');
-  /*painting dude*/
-  /*background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG');*/
+  color: $error-colour;
+  background-image: url('img/writing-a-letter.gif');//etching dude
+  //background-image: url('http://upload.wikimedia.org/wikipedia/commons/a/a8/Gabriel_Metsu_-_Man_Writing_a_Letter.JPG'); //painting dude
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,9 +32,9 @@
 }
 
 .caption {
-  background-color: rgba(255,255,255,.95);
-  padding: 1em;
+  background-color: rgba($main-bg-colour, .95);
   padding-top: .2em;
+  padding: 1em;
 }
 
 .page-info {
