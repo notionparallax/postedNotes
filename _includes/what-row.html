@@ -3,11 +3,8 @@
   <!--process stuff-->
   <h2>What we do&hellip;</h2>
   <div class="what-row-text">
-    <p>A handwritten letter is a beautiful thing, which we don't see much anymore. Maybe you don't have a stamp or forget to go to the post office - something always gets in the way of mailing that letter.</p>
-    <p>If this sounds like you then Posted Notes is here to help.</p>
-    <p>We take your text and turn it into a beautiful, handwritten note. We put a stamp on it and post it.</p>
-    <p>There is no sign up and each letter costs $5 including delivery. We've kept it really simple so all you need to think about are the words.</p>
-    <p>We will write every letter by hand on A5 paper and put it into a matching envelope. We'll write the address on the front and pop on a stamp. We will post the letter in the recipient's country.</p>
+    {% capture my_include %}{% include copy/what.md %}{% endcapture %}
+    {{ my_include | markdownify }}
   </div>
   </div>
 </section>

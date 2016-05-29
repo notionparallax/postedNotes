@@ -95,6 +95,14 @@ p {
   text-align: right;
   width: 100%;
 }
+.panel-body {
+  background-color: $contrast-bg-colour;
+  border-radius: 1em;
+  color: $main-bg-colour;
+  margin-left: 40vw;
+  margin-top: 1em;
+  padding: 1em;
+}
 
 .what-row {
   padding-bottom: 4em;

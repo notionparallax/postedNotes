@@ -17,7 +17,8 @@
 
 .footer-row {
   font-size: 62.5%;
-  padding-bottom: 4em;
+  padding: 5em;
+  padding-top: 0;
 }
 
 .social-icon {
@@ -35,7 +36,7 @@
 }
 
 .email-form label {
-  //this is a terribel hack to get the accessibility rating up
+  //this is a terrible hack to get the accessibility rating up
   color: rgba(0,0,0,0);
   display: block;
 }
