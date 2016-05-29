@@ -108,13 +108,20 @@ p {
 .what-row {
   padding-bottom: 4em;
 }
+
 .what-row-text {
   column-width: 20em;
 }
+
 .how-row {
   padding-bottom: 4em;
 }
 
+.example-row {
+    margin: 5em 0;
+
+    @include media-query($on-palm) {margin: 0;}
+}
 
 .guts {
   max-width: 75em;
