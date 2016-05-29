@@ -43,8 +43,8 @@
       "density": 4
     }
   ],
-  "background_color": "#000",
-  "theme_color": "#ff00f5",
+  "background_color": "#F5F6FA",
+  "theme_color": "#F5F6FA",
   "author":"Ben Doherty",
   "display": "fullscreen"
 }
