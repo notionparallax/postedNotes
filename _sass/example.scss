@@ -4,6 +4,10 @@
   position: relative;
   text-align: center;
   transition: height .7s ease;
+
+  @include media-query($on-palm) {
+    height: inherit;
+  }
 }
 
 .example-letter-box::before {
@@ -17,10 +21,16 @@
   position: absolute;
   top: 0;
   width: 100%;
+
+  @include media-query($on-palm) {
+    content: '';
+  }
 }
 
 .example-letter {
   width: 70%;
+
+  @include media-query($on-palm) {width: 100%;}
 }
 
 .letter-box-open {

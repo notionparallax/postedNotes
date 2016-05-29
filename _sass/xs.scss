@@ -4,19 +4,6 @@
     column-count: 1;
   }
 
-  textarea {
-    border: 0;
-    width: 100%;
-  }
-
-  .example-letter-box {
-    height: inherit;
-  }
-
-  .example-letter-box::before {
-    content: '';
-  }
-
   .row {
     margin: 0;
   }
@@ -29,138 +16,12 @@
     padding-bottom: 0;
   }
 
-  .card,
-  .envelope {
-    box-shadow: none;
-    margin: 1em;
-    padding: 1em;
-    position: relative;
-  }
-
-  .card {
-    height: 70vh;
-  }
-
-  .envelope {
-    height: 40vh;
-
-    textarea {
-      height: initial;
-      margin-left: 0;
-      padding-left: 10%;
-      padding-right: 10%;
-    }
-
-  }
-
-  .stamp {
-    height: 3em;
-    margin-bottom: 1em;
-    margin-right: 0;
-    text-align: center;
-    width: 4em;
-  }
-
-  .pen {
-    margin-left: 0;
-
-    .svg-clipper {
-      height: 30vw;
-      margin-left: 0;
-    }
-
-    .writing-implement,
-    .svg-content {
-      width: 15vw;
-    }
-  }
-
   .button-bar {
     margin-top: 0;
-  }
-
-  .button-box {
-    bottom: 5vh;
-    padding: 0 1em;
-  }
-
-  .card-error-message {
-    padding-left: .5em;
-    top: 35%;
-    width: 75%;
-  }
-
-  .envelope-error-message {
-    padding-left: 2em;
-    top: 50%;
-    width: 70%;
-  }
-
-  .t-and-c input[type=checkbox] {
-    margin: 1.5em;
-    transform: scale(3);
   }
 
   input#email-button {
     height: 6em;//make the button big enough to touch
     margin-top: 1em;
-  }
-
-  .p-and-t p {
-    //line-height: 2em;
-  }
-
-  .tc-text {
-    display: inline-block;
-    transform: translateY(1em);
-    width: 50%;
-  }
-
-  //media query targeting xs
-  //specifically targeting iphone 4
-  @media all and (max-height: 900px) and (min-height: 481px){
-    html,
-    body {
-      overflow-x: hidden;
-    }
-
-    .container {
-      padding-left: 2em;
-      padding-right: 1em;
-    }
-
-    .jumbotron {
-      font-size: 40%;
-      height: 70%;
-
-      p {
-        font-size: 16px;
-      }
-    }
-
-    .btn h3 {
-      font-size: 1em;
-    }
-
-    div.baller {
-      padding: 0;
-    }
-
-    .where-text {
-      padding-top: 0;
-    }
-
-  }
-
-  @media all and (max-height: 480px){
-    svg.logo-bird {
-      // the bird seems to be using up too much space on really small screens
-      display: none;
-    }
-
-    .stamp svg.logo-bird {
-      //this feels a bit backwards
-      display: inherit;
-    }
   }
 }

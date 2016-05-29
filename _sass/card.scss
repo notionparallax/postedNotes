@@ -1,3 +1,15 @@
+textarea {
+  border: 0;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+
+  @include media-query($on-palm) {
+    border: 0;
+    width: 100%;
+  }
+}
+
 .card-holder,
 .envelope-holder {
   padding: 0;
@@ -7,12 +19,34 @@
 .envelope {
   background-color: $paper-colour;
   border: 1px solid $shadow-colour;
+
+  @include media-query($on-palm) {
+    box-shadow: none;
+    margin: 1em;
+    padding: 1em;
+    position: relative;
+  }
+
+  @include media-query($tiny) {
+    margin: 0;
+    padding: .5em;
+  }
 }
 
 .card {
   box-shadow: 10px 10px 20px 0 $shadow-colour;
   height: 44em;
-  padding: 2em;
+  padding: 2em 1em;
+
+  @include media-query($on-palm) {
+    height: 80vh;
+  }
+
+  @include media-query($tiny) {
+    margin: 0;
+    margin-bottom: 1em;
+    padding: .5em;
+  }
 }
 
 .card-holder {
@@ -27,9 +61,22 @@
   padding-right: 4em;
   padding-top: 4em;
 
+  @include media-query($on-palm) {
+    height: 18em;
+    margin-top: 1em;
+    padding-top: 1em;
+  }
+
   textarea {
     padding-left: 20%;
     padding-right: 15%;
+
+    @include media-query($on-palm) {
+      height: 12em;
+      margin-left: 0;
+      padding-left: 10%;
+      padding-right: 10%;
+    }
   }
 }
 
@@ -40,6 +87,15 @@
 .t-and-c {
   margin-bottom: 2em;
   margin-top: 2em;
+
+  @include media-query($on-palm) { margin: 0; }
+
+  & input[type=checkbox] {
+    @include media-query($on-palm) {
+      margin: 1.5em;
+      transform: scale(3);
+    }
+  }
 }
 
 .t-and-c-error {
@@ -47,6 +103,14 @@
   display: 0;
   padding-left: 11em;
   width: 60%;
+}
+
+@include media-query($on-palm) {
+  .tc-text {
+    display: inline-block;
+    transform: translateY(1em);
+    width: 50%;
+  }
 }
 
 .card-error-message,
@@ -62,8 +126,22 @@
   width: 85%;
 }
 
+.card-error-message {
+  @include media-query($on-palm) {
+    padding-left: .5em;
+    top: 35%;
+    width: 75%;
+  }
+}
+
 .envelope-error-message {
   top: 64%;
+
+  @include media-query($on-palm) {
+    padding-left: 2em;
+    top: 50%;
+    width: 70%;
+  }
 }
 
 .stamp {
@@ -73,6 +151,13 @@
   padding: .5em;
   text-align: center;
   width: 8em;
+
+  @include media-query($on-palm) {
+    height: 3em;
+    margin-bottom: 1em;
+    margin-right: 0;
+    width: 4em;
+  }
 
   svg {
     height: 100%;
@@ -84,13 +169,6 @@
 
 }
 
-textarea {
-  border: 0;
-  height: 100%;
-  padding: 1em;
-  width: 100%;
-}
-
 .char-count {
   margin-left: .3em;
 }
@@ -100,16 +178,46 @@ textarea {
   background: yellow;
   border: 2px solid white;
   border-radius: 1em;
-  box-shadow: 15px 15px 30px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 15px 15px 30px 0 rgba(0, 0, 0, .3);
   left: 2em;
-  padding: 1em;
+  padding: 1em 1em .5em 1em;
   position: absolute;
   top: 2em;
   width: 50%;
 
+  @include media-query($on-palm) {
+    box-shadow: none;
+    position: initial;
+    width: initial;
+  }
+
   h2 {
     font-size: 130%;
-    margin: 0;
+    margin: 0 0 .3em 0;
   }
-  p {font-size: 100%;}
+
+  p {
+    font-size: 100%;
+    @include media-query($on-palm) { font-size: 120%; }
+  }
+}
+
+.panel-title a {
+  display: block;
+  font-size: 130%;
+  text-align: right;
+  width: 100%;
+}
+
+.panel-body {
+  background-color: $contrast-bg-colour;
+  border-radius: 1em;
+  color: $main-bg-colour;
+  margin-left: 40vw;
+  margin-top: 1em;
+  padding: 1em;
+
+  @include media-query($on-palm) {
+    margin-left: 0;
+  }
 }

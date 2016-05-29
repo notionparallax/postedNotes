@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" 
      class="world-map" 
-     viewBox="0 0 1576 1102" 
+     viewBox="0 0 1570 1010" 
      longdesc="A map of the world with Australia and the UK coloured in to indicate where we send letters">
 
   <path id="path3726" d="M685 541c-.5-1-1.2-3.3-1-3.8 0-.5 1.8-3.8 1.8-4.2 0-.4-1.5-2.4-1.5-2.8 0-.4.6-1.6.6-1.6l-1.6-.2 2.4-1.7c.2-.3-.8-2.2-.8-2.2l.4-2 2-.5 1.6.2 2.3-2 .5-2 3.4 4.6c.6 1 2.2 3.8 2 4.6v4.7h1l-1 3-4 2.8c-.6.3-2.7.3-2.7.3l-2 .8v1.3H687l-2 1z"/>

@@ -23,3 +23,12 @@
 .ball-icon {
   width: 100%;
 }
+
+.baller {
+  @include media-query($tiny) {
+    padding: 0;
+  }
+  @include media-query($on-palm) {
+    padding: 0;
+  }
+}

@@ -6,7 +6,7 @@
 
 //colour variables
 $main-bg-colour: hsla(228, 33%, 97%, 1);
-$ghost-bg-colour: hsla(228, 33%, 97%, .9);
+$ghost-bg-colour: hsla(228, 33%, 97%, .97);
 $contrast-bg-colour: rgba(62, 71, 157, 1);
 $error-colour: rgba(222, 30, 38, 1);
 $paper-colour: white;
@@ -15,6 +15,22 @@ $stamp-colour: rgba(222, 30, 38, 1);
 $border-colour: silver;
 $airmail-stripe-blue: $contrast-bg-colour;
 $airmail-stripe-red:rgba(222, 30, 38, 1);
+
+$tiny:             350px; //iphone4 and other ancient phones
+$on-palm:          600px;
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
 
 @-ms-viewport {//this supposedly fixes it for win mob 8
   width: device-width;
@@ -89,21 +105,6 @@ p {
   position: relative;
 }
 
-.panel-title a {
-  display: block;
-  font-size: 130%;
-  text-align: right;
-  width: 100%;
-}
-.panel-body {
-  background-color: $contrast-bg-colour;
-  border-radius: 1em;
-  color: $main-bg-colour;
-  margin-left: 40vw;
-  margin-top: 1em;
-  padding: 1em;
-}
-
 .what-row {
   padding-bottom: 4em;
 }
@@ -118,6 +119,10 @@ p {
 .guts {
   max-width: 75em;
   margin: auto;
+
+  @include media-query($on-palm) {
+    margin: 0 .5em;
+  }
 }
 
 .row {

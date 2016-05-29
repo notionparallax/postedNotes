@@ -3,7 +3,7 @@
   "short_name": "Posted Notes",
   "name": "Posted Notes",
   "default_locale": "en",
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/?utm_source=homescreen#note",
   "description": "A service that hand transcribes letters and then posts them for you",
   "icons": [
     {

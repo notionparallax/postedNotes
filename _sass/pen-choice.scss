@@ -31,10 +31,34 @@ g.outline {
   margin-left: 3em;
   margin-top: 2em;
 
+  @include media-query($on-palm) {
+    margin-left: 0;
+
+    .svg-clipper {
+      height: 30vw;
+      margin-left: 0;
+    }
+
+    .writing-implement,
+    .svg-content {
+      width: 14vw;
+    }
+  }
+
+  @include media-query($tiny) {
+    .writing-implement,
+    .svg-content {
+      width: 12vw;
+    }
+
+    .svg-clipper {
+      height: 20vw;
+    }
+  }
+
   p {
     font-size: 100%;
   }
-
 }
 
 
@@ -51,9 +75,19 @@ g.outline {
     g.lines polyline {
       stroke-width: 7;
     }
+  }
+}
 
+.active {
+  g.lines path,
+  g.lines polygon,
+  g.lines polyline {
+    stroke-width: 7;
   }
 
+  g.colour {
+    opacity: .8;
+  }
 }
 
 //fountain black

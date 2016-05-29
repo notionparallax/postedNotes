@@ -8,8 +8,18 @@
 
 .jumbotron {
   //height:92.5%;
-  height: 50%;
+  height: 70%;
   position: relative;
+
+  @include media-query($tiny) {
+    font-size: 40%;
+    height: 70%;
+    margin-bottom: 13em;
+
+    p {
+      font-size: 16px;
+    }
+  }
 
   .container {
     margin: 0;
@@ -33,6 +43,7 @@
 
 .caption {
   background-color: $ghost-bg-colour;
+  //max-width: 50em;
   padding: 1em;
   padding-top: .2em;
 }
@@ -59,4 +70,8 @@
   left: 0;
   position: absolute;
   width: 100%;
+  @include media-query($tiny) {
+      bottom: -11em;
+      padding: 0 1em;
+  }
 }

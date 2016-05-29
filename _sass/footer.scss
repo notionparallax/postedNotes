@@ -1,3 +1,15 @@
+.social-bubbles {
+  float: left;
+  height: 10em;
+  text-align: center;
+
+  .social-icon {
+    display: inline-block;
+    height: 5em;
+    width: 5em;
+  }
+}
+
 .us {
   background-image: url('/img/us.jpg');
   background-position: 50% 38%;
@@ -8,6 +20,12 @@
   max-height: 60vw;
   max-width: 60vw;
   width: 20em;
+
+  @include media-query($on-palm) {
+    float: right;
+    height: 5em;
+    width: 5em;
+  }
 }
 
 .email-form {
@@ -19,11 +37,8 @@
   font-size: 62.5%;
   padding: 5em;
   padding-top: 0;
-}
 
-.social-icon {
-  height: 5em;
-  width: 5em;
+  @include media-query($on-palm) {padding: 0;}
 }
 
 .airmail-stripe {
@@ -40,3 +55,5 @@
   color: rgba(0,0,0,0);
   display: block;
 }
+
+.licence-img {margin-right: .5em;}

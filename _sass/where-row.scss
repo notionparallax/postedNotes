@@ -1,12 +1,24 @@
 .where-row {
   background-color: $contrast-bg-colour;
   color: $main-bg-colour;
+
+  @include media-query($on-palm) {
+    padding-top: 1em;
+  }
+}
+
+.map {
+  margin-top: 1em;
+  @include media-query($on-palm) {
+    padding: 0;
+    width: 100%;
+  }
 }
 
 .where-text {
   padding-top: 4em;
-}
 
-.map {
-  width: 100%;
+  @include media-query($on-palm) {
+    padding-top: 0;
+  }
 }
